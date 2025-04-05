@@ -1,0 +1,6125 @@
+D:\py3.10\python.exe D:\pycharm\main.py
+0
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  p \vee \neg p
+$
+(1) $,
+ \xRightarrow{s}  \neg p
+, p
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(2) $,
+p
+,  \xRightarrow{s}  p
+\quad (by $$ \Rightarrow $$ \neg rule $$)$
+Result: T
+1
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( P \rightarrow Q) \rightarrow(( P \wedge R) \rightarrow Q)
+$
+(1) $,
+P \rightarrow Q
+,  \xRightarrow{s}  ( P \wedge R) \rightarrow Q
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(2) $,
+P \rightarrow Q
+, P \wedge R
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(3) $,
+P \rightarrow Q
+, R
+, P
+,  \xRightarrow{s}  Q
+\quad (by $$ \wedge  $$ \Rightarrow rule$$)$
+(3a.1) $,
+R
+, P
+, Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+(3b.1) $,
+R
+, P
+,  \xRightarrow{s}  Q
+, P
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+Result: T
+2
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( P \rightarrow Q) \rightarrow( P \rightarrow( Q \vee R))
+$
+(1) $,
+P \rightarrow Q
+,  \xRightarrow{s}  P \rightarrow( Q \vee R)
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(2) $,
+P \rightarrow Q
+, P
+,  \xRightarrow{s}  Q \vee R
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(3) $,
+P \rightarrow Q
+, P
+,  \xRightarrow{s}  R
+, Q
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(3a.1) $,
+P
+, Q
+,  \xRightarrow{s}  R
+, Q
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+(3b.1) $,
+P
+,  \xRightarrow{s}  R
+, Q
+, P
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+Result: T
+3
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  P \rightarrow( \neg P \vee Q)
+$
+(1) $,
+P
+,  \xRightarrow{s}  \neg P \vee Q
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(2) $,
+P
+,  \xRightarrow{s}  Q
+, \neg P
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(3) $,
+P
+, P
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \neg rule $$)$
+Result: F
+4
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  (( P \vee Q) \wedge( P \rightarrow Q)) \rightarrow( Q \rightarrow P)
+$
+(1) $,
+( P \vee Q) \wedge( P \rightarrow Q)
+,  \xRightarrow{s}  Q \rightarrow P
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(2) $,
+P \rightarrow Q
+, P \vee Q
+,  \xRightarrow{s}  Q \rightarrow P
+\quad (by $$ \wedge  $$ \Rightarrow rule$$)$
+(3) $,
+P \rightarrow Q
+, P \vee Q
+, Q
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(3a.1) $,
+P \vee Q
+, Q
+, Q
+,  \xRightarrow{s}  P
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+(3a.1a.1) $,
+Q
+, Q
+, P
+,  \xRightarrow{s}  P
+\quad (by $$ \vee  $$ \Rightarrow rule$$)$
+(3a.1b.1) $,
+Q
+, Q
+, Q
+,  \xRightarrow{s}  P
+\quad (by $$ \vee  $$ \Rightarrow rule$$)$
+Result: F
+5
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  P \rightarrow(( \neg Q \wedge P) \rightarrow R)
+$
+(1) $,
+P
+,  \xRightarrow{s}  ( \neg Q \wedge P) \rightarrow R
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(2) $,
+P
+, \neg Q \wedge P
+,  \xRightarrow{s}  R
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(3) $,
+P
+, P
+, \neg Q
+,  \xRightarrow{s}  R
+\quad (by $$ \wedge  $$ \Rightarrow rule$$)$
+(4) $,
+P
+, P
+,  \xRightarrow{s}  R
+, Q
+\quad (by $$ \neg  $$ \Rightarrow rule$$)$
+Result: F
+6
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  (( P \rightarrow Q) \wedge( Q \rightarrow P)) \rightarrow( P \vee Q)
+$
+(1) $,
+( P \rightarrow Q) \wedge( Q \rightarrow P)
+,  \xRightarrow{s}  P \vee Q
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(2) $,
+Q \rightarrow P
+, P \rightarrow Q
+,  \xRightarrow{s}  P \vee Q
+\quad (by $$ \wedge  $$ \Rightarrow rule$$)$
+(3) $,
+Q \rightarrow P
+, P \rightarrow Q
+,  \xRightarrow{s}  Q
+, P
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(3a.1) $,
+P \rightarrow Q
+, P
+,  \xRightarrow{s}  Q
+, P
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+(3a.1a.1) $,
+P
+, Q
+,  \xRightarrow{s}  Q
+, P
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+(3a.1b.1) $,
+P
+,  \xRightarrow{s}  Q
+, P
+, P
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+(3b.1) $,
+P \rightarrow Q
+,  \xRightarrow{s}  Q
+, P
+, Q
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+(3b.1a.1) $,
+Q
+,  \xRightarrow{s}  Q
+, P
+, Q
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+(3b.1b.1) $,
+ \xRightarrow{s}  Q
+, P
+, Q
+, P
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+Result: F
+7
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  (( P \vee Q) \rightarrow( P \vee \neg Q)) \rightarrow( \neg P \vee Q)
+$
+(1) $,
+( P \vee Q) \rightarrow( P \vee \neg Q)
+,  \xRightarrow{s}  \neg P \vee Q
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(2) $,
+( P \vee Q) \rightarrow( P \vee \neg Q)
+,  \xRightarrow{s}  Q
+, \neg P
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(3) $,
+( P \vee Q) \rightarrow( P \vee \neg Q)
+, P
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \neg rule $$)$
+(3a.1) $,
+P
+, P \vee \neg Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+(3a.1a.1) $,
+P
+, P
+,  \xRightarrow{s}  Q
+\quad (by $$ \vee  $$ \Rightarrow rule$$)$
+Result: F
+8
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  (( P \wedge Q) \vee( P \rightarrow Q)) \rightarrow( P \rightarrow Q)
+$
+(1) $,
+( P \wedge Q) \vee( P \rightarrow Q)
+,  \xRightarrow{s}  P \rightarrow Q
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(2) $,
+( P \wedge Q) \vee( P \rightarrow Q)
+, P
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(2a.1) $,
+P
+, P \wedge Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \vee  $$ \Rightarrow rule$$)$
+(2a.2) $,
+P
+, Q
+, P
+,  \xRightarrow{s}  Q
+\quad (by $$ \wedge  $$ \Rightarrow rule$$)$
+(2b.1) $,
+P
+, P \rightarrow Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \vee  $$ \Rightarrow rule$$)$
+(2b.1a.1) $,
+P
+, Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+(2b.1b.1) $,
+P
+,  \xRightarrow{s}  Q
+, P
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+Result: T
+9
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  (( P \wedge Q) \rightarrow R) \rightarrow(( P \rightarrow R) \wedge( Q \rightarrow R))
+$
+(1) $,
+( P \wedge Q) \rightarrow R
+,  \xRightarrow{s}  ( P \rightarrow R) \wedge( Q \rightarrow R)
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(1a.1) $,
+R
+,  \xRightarrow{s}  ( P \rightarrow R) \wedge( Q \rightarrow R)
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+(1a.1a.1) $,
+R
+,  \xRightarrow{s}  P \rightarrow R
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(1a.1a.2) $,
+R
+, P
+,  \xRightarrow{s}  R
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(1a.1b.1) $,
+R
+,  \xRightarrow{s}  Q \rightarrow R
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(1a.1b.2) $,
+R
+, Q
+,  \xRightarrow{s}  R
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(1b.1) $,
+ \xRightarrow{s}  ( P \rightarrow R) \wedge( Q \rightarrow R)
+, P \wedge Q
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+(1b.1a.1) $,
+ \xRightarrow{s}  P \wedge Q
+, P \rightarrow R
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(1b.1a.2) $,
+P
+,  \xRightarrow{s}  P \wedge Q
+, R
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(1b.1a.2a.1) $,
+P
+,  \xRightarrow{s}  R
+, P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(1b.1a.2b.1) $,
+P
+,  \xRightarrow{s}  R
+, Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+10
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ((( P \wedge Q) \rightarrow R) \wedge(( P \vee Q) \rightarrow \neg R)) \rightarrow(( P \wedge Q) \wedge R)
+$
+(1) $,
+(( P \wedge Q) \rightarrow R) \wedge(( P \vee Q) \rightarrow \neg R)
+,  \xRightarrow{s}  ( P \wedge Q) \wedge R
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(2) $,
+( P \vee Q) \rightarrow \neg R
+, ( P \wedge Q) \rightarrow R
+,  \xRightarrow{s}  ( P \wedge Q) \wedge R
+\quad (by $$ \wedge  $$ \Rightarrow rule$$)$
+(2a.1) $,
+( P \wedge Q) \rightarrow R
+, \neg R
+,  \xRightarrow{s}  ( P \wedge Q) \wedge R
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+(2a.2) $,
+( P \wedge Q) \rightarrow R
+,  \xRightarrow{s}  ( P \wedge Q) \wedge R
+, R
+\quad (by $$ \neg  $$ \Rightarrow rule$$)$
+(2a.2a.1) $,
+R
+,  \xRightarrow{s}  ( P \wedge Q) \wedge R
+, R
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+(2a.2a.1a.1) $,
+R
+,  \xRightarrow{s}  R
+, P \wedge Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(2a.2a.1a.1a.1) $,
+R
+,  \xRightarrow{s}  R
+, P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(2a.2a.1a.1b.1) $,
+R
+,  \xRightarrow{s}  R
+, Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(2a.2a.1b.1) $,
+R
+,  \xRightarrow{s}  R
+, R
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(2a.2b.1) $,
+ \xRightarrow{s}  ( P \wedge Q) \wedge R
+, R
+, P \wedge Q
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+(2a.2b.1a.1) $,
+ \xRightarrow{s}  R
+, P \wedge Q
+, P \wedge Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(2a.2b.1a.1a.1) $,
+ \xRightarrow{s}  R
+, P \wedge Q
+, P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(2a.2b.1a.1a.1a.1) $,
+ \xRightarrow{s}  R
+, P
+, P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+11
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( P \rightarrow Q) \rightarrow(( P \rightarrow R) \rightarrow( Q \rightarrow R))
+$
+(1) $,
+P \rightarrow Q
+,  \xRightarrow{s}  ( P \rightarrow R) \rightarrow( Q \rightarrow R)
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(2) $,
+P \rightarrow Q
+, P \rightarrow R
+,  \xRightarrow{s}  Q \rightarrow R
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(3) $,
+P \rightarrow Q
+, P \rightarrow R
+, Q
+,  \xRightarrow{s}  R
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(3a.1) $,
+P \rightarrow R
+, Q
+, Q
+,  \xRightarrow{s}  R
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+(3a.1a.1) $,
+Q
+, Q
+, R
+,  \xRightarrow{s}  R
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+(3a.1b.1) $,
+Q
+, Q
+,  \xRightarrow{s}  R
+, P
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+Result: F
+12
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  (( P \vee Q) \vee R) \rightarrow( \neg P \rightarrow(( Q \vee R) \wedge \neg P))
+$
+(1) $,
+( P \vee Q) \vee R
+,  \xRightarrow{s}  \neg P \rightarrow(( Q \vee R) \wedge \neg P)
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(2) $,
+( P \vee Q) \vee R
+, \neg P
+,  \xRightarrow{s}  ( Q \vee R) \wedge \neg P
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(3) $,
+( P \vee Q) \vee R
+,  \xRightarrow{s}  ( Q \vee R) \wedge \neg P
+, P
+\quad (by $$ \neg  $$ \Rightarrow rule$$)$
+(3a.1) $,
+P \vee Q
+,  \xRightarrow{s}  ( Q \vee R) \wedge \neg P
+, P
+\quad (by $$ \vee  $$ \Rightarrow rule$$)$
+(3a.1a.1) $,
+P
+,  \xRightarrow{s}  ( Q \vee R) \wedge \neg P
+, P
+\quad (by $$ \vee  $$ \Rightarrow rule$$)$
+(3a.1a.1a.1) $,
+P
+,  \xRightarrow{s}  P
+, Q \vee R
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(3a.1a.1a.2) $,
+P
+,  \xRightarrow{s}  P
+, R
+, Q
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(3a.1a.1b.1) $,
+P
+,  \xRightarrow{s}  P
+, \neg P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(3a.1a.1b.2) $,
+P
+, P
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \neg rule $$)$
+(3a.1b.1) $,
+Q
+,  \xRightarrow{s}  ( Q \vee R) \wedge \neg P
+, P
+\quad (by $$ \vee  $$ \Rightarrow rule$$)$
+(3a.1b.1a.1) $,
+Q
+,  \xRightarrow{s}  P
+, Q \vee R
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(3a.1b.1a.2) $,
+Q
+,  \xRightarrow{s}  P
+, R
+, Q
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(3a.1b.1b.1) $,
+Q
+,  \xRightarrow{s}  P
+, \neg P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(3a.1b.1b.2) $,
+Q
+, P
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \neg rule $$)$
+(3b.1) $,
+R
+,  \xRightarrow{s}  ( Q \vee R) \wedge \neg P
+, P
+\quad (by $$ \vee  $$ \Rightarrow rule$$)$
+(3b.1a.1) $,
+R
+,  \xRightarrow{s}  P
+, Q \vee R
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(3b.1a.2) $,
+R
+,  \xRightarrow{s}  P
+, R
+, Q
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(3b.1b.1) $,
+R
+,  \xRightarrow{s}  P
+, \neg P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(3b.1b.2) $,
+R
+, P
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \neg rule $$)$
+Result: T
+13
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( \neg( P \rightarrow Q) \wedge( Q \rightarrow P)) \rightarrow( P \wedge \neg Q)
+$
+(1) $,
+\neg( P \rightarrow Q) \wedge( Q \rightarrow P)
+,  \xRightarrow{s}  P \wedge \neg Q
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(2) $,
+Q \rightarrow P
+, \neg( P \rightarrow Q)
+,  \xRightarrow{s}  P \wedge \neg Q
+\quad (by $$ \wedge  $$ \Rightarrow rule$$)$
+(3) $,
+Q \rightarrow P
+,  \xRightarrow{s}  P \wedge \neg Q
+, P \rightarrow Q
+\quad (by $$ \neg  $$ \Rightarrow rule$$)$
+(4) $,
+Q \rightarrow P
+, P
+,  \xRightarrow{s}  P \wedge \neg Q
+, Q
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(4a.1) $,
+P
+, P
+,  \xRightarrow{s}  P \wedge \neg Q
+, Q
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+(4a.1a.1) $,
+P
+, P
+,  \xRightarrow{s}  Q
+, P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(4a.1b.1) $,
+P
+, P
+,  \xRightarrow{s}  Q
+, \neg Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(4a.1b.2) $,
+P
+, P
+, Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \neg rule $$)$
+(4b.1) $,
+P
+,  \xRightarrow{s}  P \wedge \neg Q
+, Q
+, Q
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+(4b.1a.1) $,
+P
+,  \xRightarrow{s}  Q
+, Q
+, P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(4b.1b.1) $,
+P
+,  \xRightarrow{s}  Q
+, Q
+, \neg Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(4b.1b.2) $,
+P
+, Q
+,  \xRightarrow{s}  Q
+, Q
+\quad (by $$ \Rightarrow $$ \neg rule $$)$
+Result: T
+14
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  (( P \rightarrow Q) \rightarrow( Q \rightarrow R)) \rightarrow(( R \rightarrow P) \rightarrow( Q \rightarrow P))
+$
+(1) $,
+( P \rightarrow Q) \rightarrow( Q \rightarrow R)
+,  \xRightarrow{s}  ( R \rightarrow P) \rightarrow( Q \rightarrow P)
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(2) $,
+( P \rightarrow Q) \rightarrow( Q \rightarrow R)
+, R \rightarrow P
+,  \xRightarrow{s}  Q \rightarrow P
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(3) $,
+( P \rightarrow Q) \rightarrow( Q \rightarrow R)
+, R \rightarrow P
+, Q
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(3a.1) $,
+R \rightarrow P
+, Q
+, Q \rightarrow R
+,  \xRightarrow{s}  P
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+(3a.1a.1) $,
+Q
+, Q \rightarrow R
+, P
+,  \xRightarrow{s}  P
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+(3a.1a.1a.1) $,
+Q
+, P
+, R
+,  \xRightarrow{s}  P
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+(3a.1a.1b.1) $,
+Q
+, P
+,  \xRightarrow{s}  P
+, Q
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+(3a.1b.1) $,
+Q
+, Q \rightarrow R
+,  \xRightarrow{s}  P
+, R
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+(3a.1b.1a.1) $,
+Q
+, R
+,  \xRightarrow{s}  P
+, R
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+(3a.1b.1b.1) $,
+Q
+,  \xRightarrow{s}  P
+, R
+, Q
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+(3b.1) $,
+R \rightarrow P
+, Q
+,  \xRightarrow{s}  P
+, P \rightarrow Q
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+(3b.2) $,
+R \rightarrow P
+, Q
+, P
+,  \xRightarrow{s}  P
+, Q
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(3b.2a.1) $,
+Q
+, P
+, P
+,  \xRightarrow{s}  P
+, Q
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+(3b.2b.1) $,
+Q
+, P
+,  \xRightarrow{s}  P
+, Q
+, R
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+Result: T
+15
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ((( P \rightarrow Q) \wedge( R \rightarrow Q)) \wedge( S \rightarrow Q)) \rightarrow((( P \wedge R) \wedge \neg S) \rightarrow Q)
+$
+(1) $,
+(( P \rightarrow Q) \wedge( R \rightarrow Q)) \wedge( S \rightarrow Q)
+,  \xRightarrow{s}  (( P \wedge R) \wedge \neg S) \rightarrow Q
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(2) $,
+S \rightarrow Q
+, ( P \rightarrow Q) \wedge( R \rightarrow Q)
+,  \xRightarrow{s}  (( P \wedge R) \wedge \neg S) \rightarrow Q
+\quad (by $$ \wedge  $$ \Rightarrow rule$$)$
+(3) $,
+S \rightarrow Q
+, R \rightarrow Q
+, P \rightarrow Q
+,  \xRightarrow{s}  (( P \wedge R) \wedge \neg S) \rightarrow Q
+\quad (by $$ \wedge  $$ \Rightarrow rule$$)$
+(4) $,
+S \rightarrow Q
+, R \rightarrow Q
+, P \rightarrow Q
+, ( P \wedge R) \wedge \neg S
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(5) $,
+S \rightarrow Q
+, R \rightarrow Q
+, P \rightarrow Q
+, \neg S
+, P \wedge R
+,  \xRightarrow{s}  Q
+\quad (by $$ \wedge  $$ \Rightarrow rule$$)$
+(6) $,
+S \rightarrow Q
+, R \rightarrow Q
+, P \rightarrow Q
+, P \wedge R
+,  \xRightarrow{s}  Q
+, S
+\quad (by $$ \neg  $$ \Rightarrow rule$$)$
+(7) $,
+S \rightarrow Q
+, R \rightarrow Q
+, P \rightarrow Q
+, R
+, P
+,  \xRightarrow{s}  Q
+, S
+\quad (by $$ \wedge  $$ \Rightarrow rule$$)$
+(7a.1) $,
+R \rightarrow Q
+, P \rightarrow Q
+, R
+, P
+, Q
+,  \xRightarrow{s}  Q
+, S
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+(7a.1a.1) $,
+P \rightarrow Q
+, R
+, P
+, Q
+, Q
+,  \xRightarrow{s}  Q
+, S
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+(7a.1a.1a.1) $,
+R
+, P
+, Q
+, Q
+, Q
+,  \xRightarrow{s}  Q
+, S
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+(7a.1a.1b.1) $,
+R
+, P
+, Q
+, Q
+,  \xRightarrow{s}  Q
+, S
+, P
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+(7a.1b.1) $,
+P \rightarrow Q
+, R
+, P
+, Q
+,  \xRightarrow{s}  Q
+, S
+, R
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+(7a.1b.1a.1) $,
+R
+, P
+, Q
+, Q
+,  \xRightarrow{s}  Q
+, S
+, R
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+(7a.1b.1b.1) $,
+R
+, P
+, Q
+,  \xRightarrow{s}  Q
+, S
+, R
+, P
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+(7b.1) $,
+R \rightarrow Q
+, P \rightarrow Q
+, R
+, P
+,  \xRightarrow{s}  Q
+, S
+, S
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+(7b.1a.1) $,
+P \rightarrow Q
+, R
+, P
+, Q
+,  \xRightarrow{s}  Q
+, S
+, S
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+(7b.1a.1a.1) $,
+R
+, P
+, Q
+, Q
+,  \xRightarrow{s}  Q
+, S
+, S
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+(7b.1a.1b.1) $,
+R
+, P
+, Q
+,  \xRightarrow{s}  Q
+, S
+, S
+, P
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+(7b.1b.1) $,
+P \rightarrow Q
+, R
+, P
+,  \xRightarrow{s}  Q
+, S
+, S
+, R
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+(7b.1b.1a.1) $,
+R
+, P
+, Q
+,  \xRightarrow{s}  Q
+, S
+, S
+, R
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+(7b.1b.1b.1) $,
+R
+, P
+,  \xRightarrow{s}  Q
+, S
+, S
+, R
+, P
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+Result: T
+16
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  P \wedge( P \wedge P)
+$
+(0a.1) $,
+ \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+17
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  P \vee( P \wedge P)
+$
+(1) $,
+ \xRightarrow{s}  P \wedge P
+, P
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(1a.1) $,
+ \xRightarrow{s}  P
+, P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+18
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  P \rightarrow( P \wedge P)
+$
+(1) $,
+P
+,  \xRightarrow{s}  P \wedge P
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(1a.1) $,
+P
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(1b.1) $,
+P
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: T
+19
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  P \leftrightarrow( P \wedge P)
+$
+(0a.1) $,
+P
+,  \xRightarrow{s}  P \wedge P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.1a.1) $,
+P
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(0a.1b.1) $,
+P
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(0b.1) $,
+P \wedge P
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0b.2) $,
+P
+, P
+,  \xRightarrow{s}  P
+\quad (by $$ \wedge  $$ \Rightarrow rule$$)$
+Result: T
+20
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  P \wedge( P \vee P)
+$
+(0a.1) $,
+ \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+21
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  P \vee( P \vee P)
+$
+(1) $,
+ \xRightarrow{s}  P \vee P
+, P
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(2) $,
+ \xRightarrow{s}  P
+, P
+, P
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+Result: F
+22
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  P \rightarrow( P \vee P)
+$
+(1) $,
+P
+,  \xRightarrow{s}  P \vee P
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(2) $,
+P
+,  \xRightarrow{s}  P
+, P
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+Result: T
+23
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  P \leftrightarrow( P \vee P)
+$
+(0a.1) $,
+P
+,  \xRightarrow{s}  P \vee P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.2) $,
+P
+,  \xRightarrow{s}  P
+, P
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(0b.1) $,
+P \vee P
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0b.1a.1) $,
+P
+,  \xRightarrow{s}  P
+\quad (by $$ \vee  $$ \Rightarrow rule$$)$
+(0b.1b.1) $,
+P
+,  \xRightarrow{s}  P
+\quad (by $$ \vee  $$ \Rightarrow rule$$)$
+Result: T
+24
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  P \wedge( P \rightarrow P)
+$
+(0a.1) $,
+ \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+25
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  P \vee( P \rightarrow P)
+$
+(1) $,
+ \xRightarrow{s}  P \rightarrow P
+, P
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(2) $,
+P
+,  \xRightarrow{s}  P
+, P
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+Result: T
+26
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  P \rightarrow( P \rightarrow P)
+$
+(1) $,
+P
+,  \xRightarrow{s}  P \rightarrow P
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(2) $,
+P
+, P
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+Result: T
+27
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  P \leftrightarrow( P \rightarrow P)
+$
+(0a.1) $,
+P
+,  \xRightarrow{s}  P \rightarrow P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.2) $,
+P
+, P
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(0b.1) $,
+P \rightarrow P
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0b.1a.1) $,
+P
+,  \xRightarrow{s}  P
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+(0b.1b.1) $,
+ \xRightarrow{s}  P
+, P
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+Result: F
+28
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  P \wedge( P \leftrightarrow P)
+$
+(0a.1) $,
+ \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+29
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  P \vee( P \leftrightarrow P)
+$
+(1) $,
+ \xRightarrow{s}  P \leftrightarrow P
+, P
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(1a.1) $,
+P
+,  \xRightarrow{s}  P
+, P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(1b.1) $,
+P
+,  \xRightarrow{s}  P
+, P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+Result: T
+30
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  P \rightarrow( P \leftrightarrow P)
+$
+(1) $,
+P
+,  \xRightarrow{s}  P \leftrightarrow P
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(1a.1) $,
+P
+, P
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(1b.1) $,
+P
+, P
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+Result: T
+31
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  P \leftrightarrow( P \leftrightarrow P)
+$
+(0a.1) $,
+P
+,  \xRightarrow{s}  P \leftrightarrow P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.1a.1) $,
+P
+, P
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.1b.1) $,
+P
+, P
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0b.1) $,
+P \leftrightarrow P
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0b.1a.1) $,
+P
+, P
+,  \xRightarrow{s}  P
+\quad (by $$ \leftrightarrow  $$ \Rightarrow rule$$)$
+(0b.1b.1) $,
+ \xRightarrow{s}  P
+, P
+, P
+\quad (by $$ \leftrightarrow  $$ \Rightarrow rule$$)$
+Result: F
+32
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  P \wedge( P \wedge Q)
+$
+(0a.1) $,
+ \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+33
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  P \vee( P \wedge Q)
+$
+(1) $,
+ \xRightarrow{s}  P \wedge Q
+, P
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(1a.1) $,
+ \xRightarrow{s}  P
+, P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+34
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  P \rightarrow( P \wedge Q)
+$
+(1) $,
+P
+,  \xRightarrow{s}  P \wedge Q
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(1a.1) $,
+P
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(1b.1) $,
+P
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+35
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  P \leftrightarrow( P \wedge Q)
+$
+(0a.1) $,
+P
+,  \xRightarrow{s}  P \wedge Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.1a.1) $,
+P
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(0a.1b.1) $,
+P
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+36
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  P \wedge( P \vee Q)
+$
+(0a.1) $,
+ \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+37
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  P \vee( P \vee Q)
+$
+(1) $,
+ \xRightarrow{s}  P \vee Q
+, P
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(2) $,
+ \xRightarrow{s}  P
+, Q
+, P
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+Result: F
+38
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  P \rightarrow( P \vee Q)
+$
+(1) $,
+P
+,  \xRightarrow{s}  P \vee Q
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(2) $,
+P
+,  \xRightarrow{s}  Q
+, P
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+Result: T
+39
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  P \leftrightarrow( P \vee Q)
+$
+(0a.1) $,
+P
+,  \xRightarrow{s}  P \vee Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.2) $,
+P
+,  \xRightarrow{s}  Q
+, P
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(0b.1) $,
+P \vee Q
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0b.1a.1) $,
+P
+,  \xRightarrow{s}  P
+\quad (by $$ \vee  $$ \Rightarrow rule$$)$
+(0b.1b.1) $,
+Q
+,  \xRightarrow{s}  P
+\quad (by $$ \vee  $$ \Rightarrow rule$$)$
+Result: F
+40
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  P \wedge( P \rightarrow Q)
+$
+(0a.1) $,
+ \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+41
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  P \vee( P \rightarrow Q)
+$
+(1) $,
+ \xRightarrow{s}  P \rightarrow Q
+, P
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(2) $,
+P
+,  \xRightarrow{s}  P
+, Q
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+Result: T
+42
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  P \rightarrow( P \rightarrow Q)
+$
+(1) $,
+P
+,  \xRightarrow{s}  P \rightarrow Q
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(2) $,
+P
+, P
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+Result: F
+43
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  P \leftrightarrow( P \rightarrow Q)
+$
+(0a.1) $,
+P
+,  \xRightarrow{s}  P \rightarrow Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.2) $,
+P
+, P
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+Result: F
+44
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  P \wedge( P \leftrightarrow Q)
+$
+(0a.1) $,
+ \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+45
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  P \vee( P \leftrightarrow Q)
+$
+(1) $,
+ \xRightarrow{s}  P \leftrightarrow Q
+, P
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(1a.1) $,
+P
+,  \xRightarrow{s}  P
+, Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(1b.1) $,
+Q
+,  \xRightarrow{s}  P
+, P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+Result: F
+46
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  P \rightarrow( P \leftrightarrow Q)
+$
+(1) $,
+P
+,  \xRightarrow{s}  P \leftrightarrow Q
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(1a.1) $,
+P
+, P
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+Result: F
+47
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  P \leftrightarrow( P \leftrightarrow Q)
+$
+(0a.1) $,
+P
+,  \xRightarrow{s}  P \leftrightarrow Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.1a.1) $,
+P
+, P
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+Result: F
+48
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  \neg( P \wedge \neg P)
+$
+(1) $,
+P \wedge \neg P
+,  \xRightarrow{s}  \quad (by $$ \Rightarrow $$ \neg rule $$)$
+(2) $,
+\neg P
+, P
+,  \xRightarrow{s}  \quad (by $$ \wedge  $$ \Rightarrow rule$$)$
+(3) $,
+P
+,  \xRightarrow{s}  P
+\quad (by $$ \neg  $$ \Rightarrow rule$$)$
+Result: T
+49
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  \neg( P \vee \neg P)
+$
+(1) $,
+P \vee \neg P
+,  \xRightarrow{s}  \quad (by $$ \Rightarrow $$ \neg rule $$)$
+(1a.1) $,
+P
+,  \xRightarrow{s}  \quad (by $$ \vee  $$ \Rightarrow rule$$)$
+Result: F
+50
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  \neg( P \rightarrow \neg P)
+$
+(1) $,
+P \rightarrow \neg P
+,  \xRightarrow{s}  \quad (by $$ \Rightarrow $$ \neg rule $$)$
+(1a.1) $,
+\neg P
+,  \xRightarrow{s}  \quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+(1a.2) $,
+ \xRightarrow{s}  P
+\quad (by $$ \neg  $$ \Rightarrow rule$$)$
+Result: F
+51
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  \neg( P \leftrightarrow \neg P)
+$
+(1) $,
+P \leftrightarrow \neg P
+,  \xRightarrow{s}  \quad (by $$ \Rightarrow $$ \neg rule $$)$
+(1a.1) $,
+P
+, \neg P
+,  \xRightarrow{s}  \quad (by $$ \leftrightarrow  $$ \Rightarrow rule$$)$
+(1a.2) $,
+P
+,  \xRightarrow{s}  P
+\quad (by $$ \neg  $$ \Rightarrow rule$$)$
+(1b.1) $,
+ \xRightarrow{s}  P
+, \neg P
+\quad (by $$ \leftrightarrow  $$ \Rightarrow rule$$)$
+(1b.2) $,
+P
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \neg rule $$)$
+Result: T
+52
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( P \wedge P) \wedge P
+$
+(0a.1) $,
+ \xRightarrow{s}  P \wedge P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(0a.1a.1) $,
+ \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+53
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( P \wedge P) \vee P
+$
+(1) $,
+ \xRightarrow{s}  P
+, P \wedge P
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(1a.1) $,
+ \xRightarrow{s}  P
+, P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+54
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( P \wedge P) \rightarrow P
+$
+(1) $,
+P \wedge P
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(2) $,
+P
+, P
+,  \xRightarrow{s}  P
+\quad (by $$ \wedge  $$ \Rightarrow rule$$)$
+Result: T
+55
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( P \wedge P) \leftrightarrow P
+$
+(0a.1) $,
+P \wedge P
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.2) $,
+P
+, P
+,  \xRightarrow{s}  P
+\quad (by $$ \wedge  $$ \Rightarrow rule$$)$
+(0b.1) $,
+P
+,  \xRightarrow{s}  P \wedge P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0b.1a.1) $,
+P
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(0b.1b.1) $,
+P
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: T
+56
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( P \wedge P) \wedge Q
+$
+(0a.1) $,
+ \xRightarrow{s}  P \wedge P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(0a.1a.1) $,
+ \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+57
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( P \wedge P) \vee Q
+$
+(1) $,
+ \xRightarrow{s}  Q
+, P \wedge P
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(1a.1) $,
+ \xRightarrow{s}  Q
+, P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+58
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( P \wedge P) \rightarrow Q
+$
+(1) $,
+P \wedge P
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(2) $,
+P
+, P
+,  \xRightarrow{s}  Q
+\quad (by $$ \wedge  $$ \Rightarrow rule$$)$
+Result: F
+59
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( P \wedge P) \leftrightarrow Q
+$
+(0a.1) $,
+P \wedge P
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.2) $,
+P
+, P
+,  \xRightarrow{s}  Q
+\quad (by $$ \wedge  $$ \Rightarrow rule$$)$
+Result: F
+60
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  \neg \neg( P \wedge P)
+$
+(1) $,
+\neg( P \wedge P)
+,  \xRightarrow{s}  \quad (by $$ \Rightarrow $$ \neg rule $$)$
+(2) $,
+ \xRightarrow{s}  P \wedge P
+\quad (by $$ \neg  $$ \Rightarrow rule$$)$
+(2a.1) $,
+ \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+61
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( P \vee P) \wedge P
+$
+(0a.1) $,
+ \xRightarrow{s}  P \vee P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(0a.2) $,
+ \xRightarrow{s}  P
+, P
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+Result: F
+62
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( P \vee P) \vee P
+$
+(1) $,
+ \xRightarrow{s}  P
+, P \vee P
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(2) $,
+ \xRightarrow{s}  P
+, P
+, P
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+Result: F
+63
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( P \vee P) \rightarrow P
+$
+(1) $,
+P \vee P
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(1a.1) $,
+P
+,  \xRightarrow{s}  P
+\quad (by $$ \vee  $$ \Rightarrow rule$$)$
+(1b.1) $,
+P
+,  \xRightarrow{s}  P
+\quad (by $$ \vee  $$ \Rightarrow rule$$)$
+Result: T
+64
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( P \vee P) \leftrightarrow P
+$
+(0a.1) $,
+P \vee P
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.1a.1) $,
+P
+,  \xRightarrow{s}  P
+\quad (by $$ \vee  $$ \Rightarrow rule$$)$
+(0a.1b.1) $,
+P
+,  \xRightarrow{s}  P
+\quad (by $$ \vee  $$ \Rightarrow rule$$)$
+(0b.1) $,
+P
+,  \xRightarrow{s}  P \vee P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0b.2) $,
+P
+,  \xRightarrow{s}  P
+, P
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+Result: T
+65
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( P \vee P) \wedge Q
+$
+(0a.1) $,
+ \xRightarrow{s}  P \vee P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(0a.2) $,
+ \xRightarrow{s}  P
+, P
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+Result: F
+66
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( P \vee P) \vee Q
+$
+(1) $,
+ \xRightarrow{s}  Q
+, P \vee P
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(2) $,
+ \xRightarrow{s}  Q
+, P
+, P
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+Result: F
+67
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( P \vee P) \rightarrow Q
+$
+(1) $,
+P \vee P
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(1a.1) $,
+P
+,  \xRightarrow{s}  Q
+\quad (by $$ \vee  $$ \Rightarrow rule$$)$
+Result: F
+68
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( P \vee P) \leftrightarrow Q
+$
+(0a.1) $,
+P \vee P
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.1a.1) $,
+P
+,  \xRightarrow{s}  Q
+\quad (by $$ \vee  $$ \Rightarrow rule$$)$
+Result: F
+69
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  \neg \neg( P \vee P)
+$
+(1) $,
+\neg( P \vee P)
+,  \xRightarrow{s}  \quad (by $$ \Rightarrow $$ \neg rule $$)$
+(2) $,
+ \xRightarrow{s}  P \vee P
+\quad (by $$ \neg  $$ \Rightarrow rule$$)$
+(3) $,
+ \xRightarrow{s}  P
+, P
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+Result: F
+70
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( P \rightarrow P) \wedge P
+$
+(0a.1) $,
+ \xRightarrow{s}  P \rightarrow P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(0a.2) $,
+P
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(0b.1) $,
+ \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+71
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( P \rightarrow P) \vee P
+$
+(1) $,
+ \xRightarrow{s}  P
+, P \rightarrow P
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(2) $,
+P
+,  \xRightarrow{s}  P
+, P
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+Result: T
+72
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( P \rightarrow P) \rightarrow P
+$
+(1) $,
+P \rightarrow P
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(1a.1) $,
+P
+,  \xRightarrow{s}  P
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+(1b.1) $,
+ \xRightarrow{s}  P
+, P
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+Result: F
+73
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( P \rightarrow P) \leftrightarrow P
+$
+(0a.1) $,
+P \rightarrow P
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.1a.1) $,
+P
+,  \xRightarrow{s}  P
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+(0a.1b.1) $,
+ \xRightarrow{s}  P
+, P
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+Result: F
+74
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( P \rightarrow P) \wedge Q
+$
+(0a.1) $,
+ \xRightarrow{s}  P \rightarrow P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(0a.2) $,
+P
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(0b.1) $,
+ \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+75
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( P \rightarrow P) \vee Q
+$
+(1) $,
+ \xRightarrow{s}  Q
+, P \rightarrow P
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(2) $,
+P
+,  \xRightarrow{s}  Q
+, P
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+Result: T
+76
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( P \rightarrow P) \rightarrow Q
+$
+(1) $,
+P \rightarrow P
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(1a.1) $,
+P
+,  \xRightarrow{s}  Q
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+Result: F
+77
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( P \rightarrow P) \leftrightarrow Q
+$
+(0a.1) $,
+P \rightarrow P
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.1a.1) $,
+P
+,  \xRightarrow{s}  Q
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+Result: F
+78
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  \neg \neg( P \rightarrow P)
+$
+(1) $,
+\neg( P \rightarrow P)
+,  \xRightarrow{s}  \quad (by $$ \Rightarrow $$ \neg rule $$)$
+(2) $,
+ \xRightarrow{s}  P \rightarrow P
+\quad (by $$ \neg  $$ \Rightarrow rule$$)$
+(3) $,
+P
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+Result: T
+79
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( P \leftrightarrow P) \wedge P
+$
+(0a.1) $,
+ \xRightarrow{s}  P \leftrightarrow P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(0a.1a.1) $,
+P
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.1b.1) $,
+P
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0b.1) $,
+ \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+80
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( P \leftrightarrow P) \vee P
+$
+(1) $,
+ \xRightarrow{s}  P
+, P \leftrightarrow P
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(1a.1) $,
+P
+,  \xRightarrow{s}  P
+, P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(1b.1) $,
+P
+,  \xRightarrow{s}  P
+, P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+Result: T
+81
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( P \leftrightarrow P) \rightarrow P
+$
+(1) $,
+P \leftrightarrow P
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(1a.1) $,
+P
+, P
+,  \xRightarrow{s}  P
+\quad (by $$ \leftrightarrow  $$ \Rightarrow rule$$)$
+(1b.1) $,
+ \xRightarrow{s}  P
+, P
+, P
+\quad (by $$ \leftrightarrow  $$ \Rightarrow rule$$)$
+Result: F
+82
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( P \leftrightarrow P) \leftrightarrow P
+$
+(0a.1) $,
+P \leftrightarrow P
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.1a.1) $,
+P
+, P
+,  \xRightarrow{s}  P
+\quad (by $$ \leftrightarrow  $$ \Rightarrow rule$$)$
+(0a.1b.1) $,
+ \xRightarrow{s}  P
+, P
+, P
+\quad (by $$ \leftrightarrow  $$ \Rightarrow rule$$)$
+Result: F
+83
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( P \leftrightarrow P) \wedge Q
+$
+(0a.1) $,
+ \xRightarrow{s}  P \leftrightarrow P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(0a.1a.1) $,
+P
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.1b.1) $,
+P
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0b.1) $,
+ \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+84
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( P \leftrightarrow P) \vee Q
+$
+(1) $,
+ \xRightarrow{s}  Q
+, P \leftrightarrow P
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(1a.1) $,
+P
+,  \xRightarrow{s}  Q
+, P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(1b.1) $,
+P
+,  \xRightarrow{s}  Q
+, P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+Result: T
+85
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( P \leftrightarrow P) \rightarrow Q
+$
+(1) $,
+P \leftrightarrow P
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(1a.1) $,
+P
+, P
+,  \xRightarrow{s}  Q
+\quad (by $$ \leftrightarrow  $$ \Rightarrow rule$$)$
+Result: F
+86
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( P \leftrightarrow P) \leftrightarrow Q
+$
+(0a.1) $,
+P \leftrightarrow P
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.1a.1) $,
+P
+, P
+,  \xRightarrow{s}  Q
+\quad (by $$ \leftrightarrow  $$ \Rightarrow rule$$)$
+Result: F
+87
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  \neg \neg( P \leftrightarrow P)
+$
+(1) $,
+\neg( P \leftrightarrow P)
+,  \xRightarrow{s}  \quad (by $$ \Rightarrow $$ \neg rule $$)$
+(2) $,
+ \xRightarrow{s}  P \leftrightarrow P
+\quad (by $$ \neg  $$ \Rightarrow rule$$)$
+(2a.1) $,
+P
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(2b.1) $,
+P
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+Result: T
+88
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  P \wedge( Q \wedge P)
+$
+(0a.1) $,
+ \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+89
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  P \vee( Q \wedge P)
+$
+(1) $,
+ \xRightarrow{s}  Q \wedge P
+, P
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(1a.1) $,
+ \xRightarrow{s}  P
+, Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+90
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  P \rightarrow( Q \wedge P)
+$
+(1) $,
+P
+,  \xRightarrow{s}  Q \wedge P
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(1a.1) $,
+P
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+91
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  P \leftrightarrow( Q \wedge P)
+$
+(0a.1) $,
+P
+,  \xRightarrow{s}  Q \wedge P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.1a.1) $,
+P
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+92
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  P \wedge( Q \vee P)
+$
+(0a.1) $,
+ \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+93
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  P \vee( Q \vee P)
+$
+(1) $,
+ \xRightarrow{s}  Q \vee P
+, P
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(2) $,
+ \xRightarrow{s}  P
+, P
+, Q
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+Result: F
+94
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  P \rightarrow( Q \vee P)
+$
+(1) $,
+P
+,  \xRightarrow{s}  Q \vee P
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(2) $,
+P
+,  \xRightarrow{s}  P
+, Q
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+Result: T
+95
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  P \leftrightarrow( Q \vee P)
+$
+(0a.1) $,
+P
+,  \xRightarrow{s}  Q \vee P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.2) $,
+P
+,  \xRightarrow{s}  P
+, Q
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(0b.1) $,
+Q \vee P
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0b.1a.1) $,
+Q
+,  \xRightarrow{s}  P
+\quad (by $$ \vee  $$ \Rightarrow rule$$)$
+Result: F
+96
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  P \wedge( Q \rightarrow P)
+$
+(0a.1) $,
+ \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+97
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  P \vee( Q \rightarrow P)
+$
+(1) $,
+ \xRightarrow{s}  Q \rightarrow P
+, P
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(2) $,
+Q
+,  \xRightarrow{s}  P
+, P
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+Result: F
+98
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  P \rightarrow( Q \rightarrow P)
+$
+(1) $,
+P
+,  \xRightarrow{s}  Q \rightarrow P
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(2) $,
+P
+, Q
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+Result: T
+99
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  P \leftrightarrow( Q \rightarrow P)
+$
+(0a.1) $,
+P
+,  \xRightarrow{s}  Q \rightarrow P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.2) $,
+P
+, Q
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(0b.1) $,
+Q \rightarrow P
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0b.1a.1) $,
+P
+,  \xRightarrow{s}  P
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+(0b.1b.1) $,
+ \xRightarrow{s}  P
+, Q
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+Result: F
+100
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  P \wedge( Q \leftrightarrow P)
+$
+(0a.1) $,
+ \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+101
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  P \vee( Q \leftrightarrow P)
+$
+(1) $,
+ \xRightarrow{s}  Q \leftrightarrow P
+, P
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(1a.1) $,
+Q
+,  \xRightarrow{s}  P
+, P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+Result: F
+102
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  P \rightarrow( Q \leftrightarrow P)
+$
+(1) $,
+P
+,  \xRightarrow{s}  Q \leftrightarrow P
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(1a.1) $,
+P
+, Q
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(1b.1) $,
+P
+, P
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+Result: F
+103
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  P \leftrightarrow( Q \leftrightarrow P)
+$
+(0a.1) $,
+P
+,  \xRightarrow{s}  Q \leftrightarrow P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.1a.1) $,
+P
+, Q
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.1b.1) $,
+P
+, P
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+Result: F
+104
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  P \wedge( Q \wedge Q)
+$
+(0a.1) $,
+ \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+105
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  P \vee( Q \wedge Q)
+$
+(1) $,
+ \xRightarrow{s}  Q \wedge Q
+, P
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(1a.1) $,
+ \xRightarrow{s}  P
+, Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+106
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  P \rightarrow( Q \wedge Q)
+$
+(1) $,
+P
+,  \xRightarrow{s}  Q \wedge Q
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(1a.1) $,
+P
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+107
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  P \leftrightarrow( Q \wedge Q)
+$
+(0a.1) $,
+P
+,  \xRightarrow{s}  Q \wedge Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.1a.1) $,
+P
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+108
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  P \wedge( Q \vee Q)
+$
+(0a.1) $,
+ \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+109
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  P \vee( Q \vee Q)
+$
+(1) $,
+ \xRightarrow{s}  Q \vee Q
+, P
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(2) $,
+ \xRightarrow{s}  P
+, Q
+, Q
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+Result: F
+110
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  P \rightarrow( Q \vee Q)
+$
+(1) $,
+P
+,  \xRightarrow{s}  Q \vee Q
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(2) $,
+P
+,  \xRightarrow{s}  Q
+, Q
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+Result: F
+111
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  P \leftrightarrow( Q \vee Q)
+$
+(0a.1) $,
+P
+,  \xRightarrow{s}  Q \vee Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.2) $,
+P
+,  \xRightarrow{s}  Q
+, Q
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+Result: F
+112
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  P \wedge( Q \rightarrow Q)
+$
+(0a.1) $,
+ \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+113
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  P \vee( Q \rightarrow Q)
+$
+(1) $,
+ \xRightarrow{s}  Q \rightarrow Q
+, P
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(2) $,
+Q
+,  \xRightarrow{s}  P
+, Q
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+Result: T
+114
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  P \rightarrow( Q \rightarrow Q)
+$
+(1) $,
+P
+,  \xRightarrow{s}  Q \rightarrow Q
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(2) $,
+P
+, Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+Result: T
+115
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  P \leftrightarrow( Q \rightarrow Q)
+$
+(0a.1) $,
+P
+,  \xRightarrow{s}  Q \rightarrow Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.2) $,
+P
+, Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(0b.1) $,
+Q \rightarrow Q
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0b.1a.1) $,
+Q
+,  \xRightarrow{s}  P
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+Result: F
+116
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  P \wedge( Q \leftrightarrow Q)
+$
+(0a.1) $,
+ \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+117
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  P \vee( Q \leftrightarrow Q)
+$
+(1) $,
+ \xRightarrow{s}  Q \leftrightarrow Q
+, P
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(1a.1) $,
+Q
+,  \xRightarrow{s}  P
+, Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(1b.1) $,
+Q
+,  \xRightarrow{s}  P
+, Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+Result: T
+118
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  P \rightarrow( Q \leftrightarrow Q)
+$
+(1) $,
+P
+,  \xRightarrow{s}  Q \leftrightarrow Q
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(1a.1) $,
+P
+, Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(1b.1) $,
+P
+, Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+Result: T
+119
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  P \leftrightarrow( Q \leftrightarrow Q)
+$
+(0a.1) $,
+P
+,  \xRightarrow{s}  Q \leftrightarrow Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.1a.1) $,
+P
+, Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.1b.1) $,
+P
+, Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0b.1) $,
+Q \leftrightarrow Q
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0b.1a.1) $,
+Q
+, Q
+,  \xRightarrow{s}  P
+\quad (by $$ \leftrightarrow  $$ \Rightarrow rule$$)$
+Result: F
+120
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  \neg( P \wedge \neg Q)
+$
+(1) $,
+P \wedge \neg Q
+,  \xRightarrow{s}  \quad (by $$ \Rightarrow $$ \neg rule $$)$
+(2) $,
+\neg Q
+, P
+,  \xRightarrow{s}  \quad (by $$ \wedge  $$ \Rightarrow rule$$)$
+(3) $,
+P
+,  \xRightarrow{s}  Q
+\quad (by $$ \neg  $$ \Rightarrow rule$$)$
+Result: F
+121
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  \neg( P \vee \neg Q)
+$
+(1) $,
+P \vee \neg Q
+,  \xRightarrow{s}  \quad (by $$ \Rightarrow $$ \neg rule $$)$
+(1a.1) $,
+P
+,  \xRightarrow{s}  \quad (by $$ \vee  $$ \Rightarrow rule$$)$
+Result: F
+122
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  \neg( P \rightarrow \neg Q)
+$
+(1) $,
+P \rightarrow \neg Q
+,  \xRightarrow{s}  \quad (by $$ \Rightarrow $$ \neg rule $$)$
+(1a.1) $,
+\neg Q
+,  \xRightarrow{s}  \quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+(1a.2) $,
+ \xRightarrow{s}  Q
+\quad (by $$ \neg  $$ \Rightarrow rule$$)$
+Result: F
+123
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  \neg( P \leftrightarrow \neg Q)
+$
+(1) $,
+P \leftrightarrow \neg Q
+,  \xRightarrow{s}  \quad (by $$ \Rightarrow $$ \neg rule $$)$
+(1a.1) $,
+P
+, \neg Q
+,  \xRightarrow{s}  \quad (by $$ \leftrightarrow  $$ \Rightarrow rule$$)$
+(1a.2) $,
+P
+,  \xRightarrow{s}  Q
+\quad (by $$ \neg  $$ \Rightarrow rule$$)$
+Result: F
+124
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( P \wedge Q) \wedge P
+$
+(0a.1) $,
+ \xRightarrow{s}  P \wedge Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(0a.1a.1) $,
+ \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+125
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( P \wedge Q) \vee P
+$
+(1) $,
+ \xRightarrow{s}  P
+, P \wedge Q
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(1a.1) $,
+ \xRightarrow{s}  P
+, P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+126
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( P \wedge Q) \rightarrow P
+$
+(1) $,
+P \wedge Q
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(2) $,
+Q
+, P
+,  \xRightarrow{s}  P
+\quad (by $$ \wedge  $$ \Rightarrow rule$$)$
+Result: T
+127
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( P \wedge Q) \leftrightarrow P
+$
+(0a.1) $,
+P \wedge Q
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.2) $,
+Q
+, P
+,  \xRightarrow{s}  P
+\quad (by $$ \wedge  $$ \Rightarrow rule$$)$
+(0b.1) $,
+P
+,  \xRightarrow{s}  P \wedge Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0b.1a.1) $,
+P
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(0b.1b.1) $,
+P
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+128
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( P \wedge Q) \wedge Q
+$
+(0a.1) $,
+ \xRightarrow{s}  P \wedge Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(0a.1a.1) $,
+ \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+129
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( P \wedge Q) \vee Q
+$
+(1) $,
+ \xRightarrow{s}  Q
+, P \wedge Q
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(1a.1) $,
+ \xRightarrow{s}  Q
+, P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+130
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( P \wedge Q) \rightarrow Q
+$
+(1) $,
+P \wedge Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(2) $,
+Q
+, P
+,  \xRightarrow{s}  Q
+\quad (by $$ \wedge  $$ \Rightarrow rule$$)$
+Result: T
+131
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( P \wedge Q) \leftrightarrow Q
+$
+(0a.1) $,
+P \wedge Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.2) $,
+Q
+, P
+,  \xRightarrow{s}  Q
+\quad (by $$ \wedge  $$ \Rightarrow rule$$)$
+(0b.1) $,
+Q
+,  \xRightarrow{s}  P \wedge Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0b.1a.1) $,
+Q
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+132
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  \neg \neg( P \wedge Q)
+$
+(1) $,
+\neg( P \wedge Q)
+,  \xRightarrow{s}  \quad (by $$ \Rightarrow $$ \neg rule $$)$
+(2) $,
+ \xRightarrow{s}  P \wedge Q
+\quad (by $$ \neg  $$ \Rightarrow rule$$)$
+(2a.1) $,
+ \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+133
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( P \vee Q) \wedge P
+$
+(0a.1) $,
+ \xRightarrow{s}  P \vee Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(0a.2) $,
+ \xRightarrow{s}  Q
+, P
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+Result: F
+134
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( P \vee Q) \vee P
+$
+(1) $,
+ \xRightarrow{s}  P
+, P \vee Q
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(2) $,
+ \xRightarrow{s}  P
+, Q
+, P
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+Result: F
+135
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( P \vee Q) \rightarrow P
+$
+(1) $,
+P \vee Q
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(1a.1) $,
+P
+,  \xRightarrow{s}  P
+\quad (by $$ \vee  $$ \Rightarrow rule$$)$
+(1b.1) $,
+Q
+,  \xRightarrow{s}  P
+\quad (by $$ \vee  $$ \Rightarrow rule$$)$
+Result: F
+136
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( P \vee Q) \leftrightarrow P
+$
+(0a.1) $,
+P \vee Q
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.1a.1) $,
+P
+,  \xRightarrow{s}  P
+\quad (by $$ \vee  $$ \Rightarrow rule$$)$
+(0a.1b.1) $,
+Q
+,  \xRightarrow{s}  P
+\quad (by $$ \vee  $$ \Rightarrow rule$$)$
+Result: F
+137
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( P \vee Q) \wedge Q
+$
+(0a.1) $,
+ \xRightarrow{s}  P \vee Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(0a.2) $,
+ \xRightarrow{s}  Q
+, P
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+Result: F
+138
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( P \vee Q) \vee Q
+$
+(1) $,
+ \xRightarrow{s}  Q
+, P \vee Q
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(2) $,
+ \xRightarrow{s}  Q
+, Q
+, P
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+Result: F
+139
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( P \vee Q) \rightarrow Q
+$
+(1) $,
+P \vee Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(1a.1) $,
+P
+,  \xRightarrow{s}  Q
+\quad (by $$ \vee  $$ \Rightarrow rule$$)$
+Result: F
+140
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( P \vee Q) \leftrightarrow Q
+$
+(0a.1) $,
+P \vee Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.1a.1) $,
+P
+,  \xRightarrow{s}  Q
+\quad (by $$ \vee  $$ \Rightarrow rule$$)$
+Result: F
+141
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  \neg \neg( P \vee Q)
+$
+(1) $,
+\neg( P \vee Q)
+,  \xRightarrow{s}  \quad (by $$ \Rightarrow $$ \neg rule $$)$
+(2) $,
+ \xRightarrow{s}  P \vee Q
+\quad (by $$ \neg  $$ \Rightarrow rule$$)$
+(3) $,
+ \xRightarrow{s}  Q
+, P
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+Result: F
+142
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( P \rightarrow Q) \wedge P
+$
+(0a.1) $,
+ \xRightarrow{s}  P \rightarrow Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(0a.2) $,
+P
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+Result: F
+143
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( P \rightarrow Q) \vee P
+$
+(1) $,
+ \xRightarrow{s}  P
+, P \rightarrow Q
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(2) $,
+P
+,  \xRightarrow{s}  P
+, Q
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+Result: T
+144
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( P \rightarrow Q) \rightarrow P
+$
+(1) $,
+P \rightarrow Q
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(1a.1) $,
+Q
+,  \xRightarrow{s}  P
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+Result: F
+145
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( P \rightarrow Q) \leftrightarrow P
+$
+(0a.1) $,
+P \rightarrow Q
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.1a.1) $,
+Q
+,  \xRightarrow{s}  P
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+Result: F
+146
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( P \rightarrow Q) \wedge Q
+$
+(0a.1) $,
+ \xRightarrow{s}  P \rightarrow Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(0a.2) $,
+P
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+Result: F
+147
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( P \rightarrow Q) \vee Q
+$
+(1) $,
+ \xRightarrow{s}  Q
+, P \rightarrow Q
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(2) $,
+P
+,  \xRightarrow{s}  Q
+, Q
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+Result: F
+148
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( P \rightarrow Q) \rightarrow Q
+$
+(1) $,
+P \rightarrow Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(1a.1) $,
+Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+(1b.1) $,
+ \xRightarrow{s}  Q
+, P
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+Result: F
+149
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( P \rightarrow Q) \leftrightarrow Q
+$
+(0a.1) $,
+P \rightarrow Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.1a.1) $,
+Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+(0a.1b.1) $,
+ \xRightarrow{s}  Q
+, P
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+Result: F
+150
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  \neg \neg( P \rightarrow Q)
+$
+(1) $,
+\neg( P \rightarrow Q)
+,  \xRightarrow{s}  \quad (by $$ \Rightarrow $$ \neg rule $$)$
+(2) $,
+ \xRightarrow{s}  P \rightarrow Q
+\quad (by $$ \neg  $$ \Rightarrow rule$$)$
+(3) $,
+P
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+Result: F
+151
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( P \leftrightarrow Q) \wedge P
+$
+(0a.1) $,
+ \xRightarrow{s}  P \leftrightarrow Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(0a.1a.1) $,
+P
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+Result: F
+152
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( P \leftrightarrow Q) \vee P
+$
+(1) $,
+ \xRightarrow{s}  P
+, P \leftrightarrow Q
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(1a.1) $,
+P
+,  \xRightarrow{s}  P
+, Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(1b.1) $,
+Q
+,  \xRightarrow{s}  P
+, P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+Result: F
+153
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( P \leftrightarrow Q) \rightarrow P
+$
+(1) $,
+P \leftrightarrow Q
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(1a.1) $,
+P
+, Q
+,  \xRightarrow{s}  P
+\quad (by $$ \leftrightarrow  $$ \Rightarrow rule$$)$
+(1b.1) $,
+ \xRightarrow{s}  P
+, P
+, Q
+\quad (by $$ \leftrightarrow  $$ \Rightarrow rule$$)$
+Result: F
+154
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( P \leftrightarrow Q) \leftrightarrow P
+$
+(0a.1) $,
+P \leftrightarrow Q
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.1a.1) $,
+P
+, Q
+,  \xRightarrow{s}  P
+\quad (by $$ \leftrightarrow  $$ \Rightarrow rule$$)$
+(0a.1b.1) $,
+ \xRightarrow{s}  P
+, P
+, Q
+\quad (by $$ \leftrightarrow  $$ \Rightarrow rule$$)$
+Result: F
+155
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( P \leftrightarrow Q) \wedge Q
+$
+(0a.1) $,
+ \xRightarrow{s}  P \leftrightarrow Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(0a.1a.1) $,
+P
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+Result: F
+156
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( P \leftrightarrow Q) \vee Q
+$
+(1) $,
+ \xRightarrow{s}  Q
+, P \leftrightarrow Q
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(1a.1) $,
+P
+,  \xRightarrow{s}  Q
+, Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+Result: F
+157
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( P \leftrightarrow Q) \rightarrow Q
+$
+(1) $,
+P \leftrightarrow Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(1a.1) $,
+P
+, Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \leftrightarrow  $$ \Rightarrow rule$$)$
+(1b.1) $,
+ \xRightarrow{s}  Q
+, P
+, Q
+\quad (by $$ \leftrightarrow  $$ \Rightarrow rule$$)$
+Result: F
+158
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( P \leftrightarrow Q) \leftrightarrow Q
+$
+(0a.1) $,
+P \leftrightarrow Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.1a.1) $,
+P
+, Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \leftrightarrow  $$ \Rightarrow rule$$)$
+(0a.1b.1) $,
+ \xRightarrow{s}  Q
+, P
+, Q
+\quad (by $$ \leftrightarrow  $$ \Rightarrow rule$$)$
+Result: F
+159
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  \neg \neg( P \leftrightarrow Q)
+$
+(1) $,
+\neg( P \leftrightarrow Q)
+,  \xRightarrow{s}  \quad (by $$ \Rightarrow $$ \neg rule $$)$
+(2) $,
+ \xRightarrow{s}  P \leftrightarrow Q
+\quad (by $$ \neg  $$ \Rightarrow rule$$)$
+(2a.1) $,
+P
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+Result: F
+160
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  \neg( \neg P \wedge P)
+$
+(1) $,
+\neg P \wedge P
+,  \xRightarrow{s}  \quad (by $$ \Rightarrow $$ \neg rule $$)$
+(2) $,
+P
+, \neg P
+,  \xRightarrow{s}  \quad (by $$ \wedge  $$ \Rightarrow rule$$)$
+(3) $,
+P
+,  \xRightarrow{s}  P
+\quad (by $$ \neg  $$ \Rightarrow rule$$)$
+Result: T
+161
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  \neg( \neg P \vee P)
+$
+(1) $,
+\neg P \vee P
+,  \xRightarrow{s}  \quad (by $$ \Rightarrow $$ \neg rule $$)$
+(1a.1) $,
+\neg P
+,  \xRightarrow{s}  \quad (by $$ \vee  $$ \Rightarrow rule$$)$
+(1a.2) $,
+ \xRightarrow{s}  P
+\quad (by $$ \neg  $$ \Rightarrow rule$$)$
+Result: F
+162
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  \neg( \neg P \rightarrow P)
+$
+(1) $,
+\neg P \rightarrow P
+,  \xRightarrow{s}  \quad (by $$ \Rightarrow $$ \neg rule $$)$
+(1a.1) $,
+P
+,  \xRightarrow{s}  \quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+Result: F
+163
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  \neg( \neg P \leftrightarrow P)
+$
+(1) $,
+\neg P \leftrightarrow P
+,  \xRightarrow{s}  \quad (by $$ \Rightarrow $$ \neg rule $$)$
+(1a.1) $,
+\neg P
+, P
+,  \xRightarrow{s}  \quad (by $$ \leftrightarrow  $$ \Rightarrow rule$$)$
+(1a.2) $,
+P
+,  \xRightarrow{s}  P
+\quad (by $$ \neg  $$ \Rightarrow rule$$)$
+(1b.1) $,
+ \xRightarrow{s}  \neg P
+, P
+\quad (by $$ \leftrightarrow  $$ \Rightarrow rule$$)$
+(1b.2) $,
+P
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \neg rule $$)$
+Result: T
+164
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  \neg( \neg P \wedge Q)
+$
+(1) $,
+\neg P \wedge Q
+,  \xRightarrow{s}  \quad (by $$ \Rightarrow $$ \neg rule $$)$
+(2) $,
+Q
+, \neg P
+,  \xRightarrow{s}  \quad (by $$ \wedge  $$ \Rightarrow rule$$)$
+(3) $,
+Q
+,  \xRightarrow{s}  P
+\quad (by $$ \neg  $$ \Rightarrow rule$$)$
+Result: F
+165
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  \neg( \neg P \vee Q)
+$
+(1) $,
+\neg P \vee Q
+,  \xRightarrow{s}  \quad (by $$ \Rightarrow $$ \neg rule $$)$
+(1a.1) $,
+\neg P
+,  \xRightarrow{s}  \quad (by $$ \vee  $$ \Rightarrow rule$$)$
+(1a.2) $,
+ \xRightarrow{s}  P
+\quad (by $$ \neg  $$ \Rightarrow rule$$)$
+Result: F
+166
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  \neg( \neg P \rightarrow Q)
+$
+(1) $,
+\neg P \rightarrow Q
+,  \xRightarrow{s}  \quad (by $$ \Rightarrow $$ \neg rule $$)$
+(1a.1) $,
+Q
+,  \xRightarrow{s}  \quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+Result: F
+167
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  \neg( \neg P \leftrightarrow Q)
+$
+(1) $,
+\neg P \leftrightarrow Q
+,  \xRightarrow{s}  \quad (by $$ \Rightarrow $$ \neg rule $$)$
+(1a.1) $,
+\neg P
+, Q
+,  \xRightarrow{s}  \quad (by $$ \leftrightarrow  $$ \Rightarrow rule$$)$
+(1a.2) $,
+Q
+,  \xRightarrow{s}  P
+\quad (by $$ \neg  $$ \Rightarrow rule$$)$
+Result: F
+168
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  \neg \neg P \wedge P
+$
+(0a.1) $,
+ \xRightarrow{s}  \neg \neg P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(0a.2) $,
+\neg P
+,  \xRightarrow{s}  \quad (by $$ \Rightarrow $$ \neg rule $$)$
+(0a.3) $,
+ \xRightarrow{s}  P
+\quad (by $$ \neg  $$ \Rightarrow rule$$)$
+Result: F
+169
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  \neg \neg P \vee P
+$
+(1) $,
+ \xRightarrow{s}  P
+, \neg \neg P
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(2) $,
+\neg P
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \neg rule $$)$
+(3) $,
+ \xRightarrow{s}  P
+, P
+\quad (by $$ \neg  $$ \Rightarrow rule$$)$
+Result: F
+170
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  \neg \neg P \rightarrow P
+$
+(1) $,
+\neg \neg P
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(2) $,
+ \xRightarrow{s}  P
+, \neg P
+\quad (by $$ \neg  $$ \Rightarrow rule$$)$
+(3) $,
+P
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \neg rule $$)$
+Result: T
+171
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  \neg \neg P \leftrightarrow P
+$
+(0a.1) $,
+\neg \neg P
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.2) $,
+ \xRightarrow{s}  P
+, \neg P
+\quad (by $$ \neg  $$ \Rightarrow rule$$)$
+(0a.3) $,
+P
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \neg rule $$)$
+(0b.1) $,
+P
+,  \xRightarrow{s}  \neg \neg P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0b.2) $,
+P
+, \neg P
+,  \xRightarrow{s}  \quad (by $$ \Rightarrow $$ \neg rule $$)$
+(0b.3) $,
+P
+,  \xRightarrow{s}  P
+\quad (by $$ \neg  $$ \Rightarrow rule$$)$
+Result: T
+172
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  \neg \neg P \wedge Q
+$
+(0a.1) $,
+ \xRightarrow{s}  \neg \neg P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(0a.2) $,
+\neg P
+,  \xRightarrow{s}  \quad (by $$ \Rightarrow $$ \neg rule $$)$
+(0a.3) $,
+ \xRightarrow{s}  P
+\quad (by $$ \neg  $$ \Rightarrow rule$$)$
+Result: F
+173
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  \neg \neg P \vee Q
+$
+(1) $,
+ \xRightarrow{s}  Q
+, \neg \neg P
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(2) $,
+\neg P
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \neg rule $$)$
+(3) $,
+ \xRightarrow{s}  Q
+, P
+\quad (by $$ \neg  $$ \Rightarrow rule$$)$
+Result: F
+174
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  \neg \neg P \rightarrow Q
+$
+(1) $,
+\neg \neg P
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(2) $,
+ \xRightarrow{s}  Q
+, \neg P
+\quad (by $$ \neg  $$ \Rightarrow rule$$)$
+(3) $,
+P
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \neg rule $$)$
+Result: F
+175
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  \neg \neg P \leftrightarrow Q
+$
+(0a.1) $,
+\neg \neg P
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.2) $,
+ \xRightarrow{s}  Q
+, \neg P
+\quad (by $$ \neg  $$ \Rightarrow rule$$)$
+(0a.3) $,
+P
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \neg rule $$)$
+Result: F
+176
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  \neg \neg \neg \neg P
+$
+(1) $,
+\neg \neg \neg P
+,  \xRightarrow{s}  \quad (by $$ \Rightarrow $$ \neg rule $$)$
+(2) $,
+ \xRightarrow{s}  \neg \neg P
+\quad (by $$ \neg  $$ \Rightarrow rule$$)$
+(3) $,
+\neg P
+,  \xRightarrow{s}  \quad (by $$ \Rightarrow $$ \neg rule $$)$
+(4) $,
+ \xRightarrow{s}  P
+\quad (by $$ \neg  $$ \Rightarrow rule$$)$
+Result: F
+177
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  Q \wedge( P \wedge P)
+$
+(0a.1) $,
+ \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+178
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  Q \vee( P \wedge P)
+$
+(1) $,
+ \xRightarrow{s}  P \wedge P
+, Q
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(1a.1) $,
+ \xRightarrow{s}  Q
+, P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+179
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  Q \rightarrow( P \wedge P)
+$
+(1) $,
+Q
+,  \xRightarrow{s}  P \wedge P
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(1a.1) $,
+Q
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+180
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  Q \leftrightarrow( P \wedge P)
+$
+(0a.1) $,
+Q
+,  \xRightarrow{s}  P \wedge P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.1a.1) $,
+Q
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+181
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  Q \wedge( P \vee P)
+$
+(0a.1) $,
+ \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+182
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  Q \vee( P \vee P)
+$
+(1) $,
+ \xRightarrow{s}  P \vee P
+, Q
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(2) $,
+ \xRightarrow{s}  Q
+, P
+, P
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+Result: F
+183
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  Q \rightarrow( P \vee P)
+$
+(1) $,
+Q
+,  \xRightarrow{s}  P \vee P
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(2) $,
+Q
+,  \xRightarrow{s}  P
+, P
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+Result: F
+184
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  Q \leftrightarrow( P \vee P)
+$
+(0a.1) $,
+Q
+,  \xRightarrow{s}  P \vee P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.2) $,
+Q
+,  \xRightarrow{s}  P
+, P
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+Result: F
+185
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  Q \wedge( P \rightarrow P)
+$
+(0a.1) $,
+ \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+186
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  Q \vee( P \rightarrow P)
+$
+(1) $,
+ \xRightarrow{s}  P \rightarrow P
+, Q
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(2) $,
+P
+,  \xRightarrow{s}  Q
+, P
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+Result: T
+187
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  Q \rightarrow( P \rightarrow P)
+$
+(1) $,
+Q
+,  \xRightarrow{s}  P \rightarrow P
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(2) $,
+Q
+, P
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+Result: T
+188
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  Q \leftrightarrow( P \rightarrow P)
+$
+(0a.1) $,
+Q
+,  \xRightarrow{s}  P \rightarrow P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.2) $,
+Q
+, P
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(0b.1) $,
+P \rightarrow P
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0b.1a.1) $,
+P
+,  \xRightarrow{s}  Q
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+Result: F
+189
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  Q \wedge( P \leftrightarrow P)
+$
+(0a.1) $,
+ \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+190
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  Q \vee( P \leftrightarrow P)
+$
+(1) $,
+ \xRightarrow{s}  P \leftrightarrow P
+, Q
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(1a.1) $,
+P
+,  \xRightarrow{s}  Q
+, P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(1b.1) $,
+P
+,  \xRightarrow{s}  Q
+, P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+Result: T
+191
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  Q \rightarrow( P \leftrightarrow P)
+$
+(1) $,
+Q
+,  \xRightarrow{s}  P \leftrightarrow P
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(1a.1) $,
+Q
+, P
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(1b.1) $,
+Q
+, P
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+Result: T
+192
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  Q \leftrightarrow( P \leftrightarrow P)
+$
+(0a.1) $,
+Q
+,  \xRightarrow{s}  P \leftrightarrow P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.1a.1) $,
+Q
+, P
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.1b.1) $,
+Q
+, P
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0b.1) $,
+P \leftrightarrow P
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0b.1a.1) $,
+P
+, P
+,  \xRightarrow{s}  Q
+\quad (by $$ \leftrightarrow  $$ \Rightarrow rule$$)$
+Result: F
+193
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  Q \wedge( P \wedge Q)
+$
+(0a.1) $,
+ \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+194
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  Q \vee( P \wedge Q)
+$
+(1) $,
+ \xRightarrow{s}  P \wedge Q
+, Q
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(1a.1) $,
+ \xRightarrow{s}  Q
+, P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+195
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  Q \rightarrow( P \wedge Q)
+$
+(1) $,
+Q
+,  \xRightarrow{s}  P \wedge Q
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(1a.1) $,
+Q
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+196
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  Q \leftrightarrow( P \wedge Q)
+$
+(0a.1) $,
+Q
+,  \xRightarrow{s}  P \wedge Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.1a.1) $,
+Q
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+197
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  Q \wedge( P \vee Q)
+$
+(0a.1) $,
+ \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+198
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  Q \vee( P \vee Q)
+$
+(1) $,
+ \xRightarrow{s}  P \vee Q
+, Q
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(2) $,
+ \xRightarrow{s}  Q
+, Q
+, P
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+Result: F
+199
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  Q \rightarrow( P \vee Q)
+$
+(1) $,
+Q
+,  \xRightarrow{s}  P \vee Q
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(2) $,
+Q
+,  \xRightarrow{s}  Q
+, P
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+Result: T
+200
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  Q \leftrightarrow( P \vee Q)
+$
+(0a.1) $,
+Q
+,  \xRightarrow{s}  P \vee Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.2) $,
+Q
+,  \xRightarrow{s}  Q
+, P
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(0b.1) $,
+P \vee Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0b.1a.1) $,
+P
+,  \xRightarrow{s}  Q
+\quad (by $$ \vee  $$ \Rightarrow rule$$)$
+Result: F
+201
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  Q \wedge( P \rightarrow Q)
+$
+(0a.1) $,
+ \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+202
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  Q \vee( P \rightarrow Q)
+$
+(1) $,
+ \xRightarrow{s}  P \rightarrow Q
+, Q
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(2) $,
+P
+,  \xRightarrow{s}  Q
+, Q
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+Result: F
+203
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  Q \rightarrow( P \rightarrow Q)
+$
+(1) $,
+Q
+,  \xRightarrow{s}  P \rightarrow Q
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(2) $,
+Q
+, P
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+Result: T
+204
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  Q \leftrightarrow( P \rightarrow Q)
+$
+(0a.1) $,
+Q
+,  \xRightarrow{s}  P \rightarrow Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.2) $,
+Q
+, P
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(0b.1) $,
+P \rightarrow Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0b.1a.1) $,
+Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+(0b.1b.1) $,
+ \xRightarrow{s}  Q
+, P
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+Result: F
+205
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  Q \wedge( P \leftrightarrow Q)
+$
+(0a.1) $,
+ \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+206
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  Q \vee( P \leftrightarrow Q)
+$
+(1) $,
+ \xRightarrow{s}  P \leftrightarrow Q
+, Q
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(1a.1) $,
+P
+,  \xRightarrow{s}  Q
+, Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+Result: F
+207
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  Q \rightarrow( P \leftrightarrow Q)
+$
+(1) $,
+Q
+,  \xRightarrow{s}  P \leftrightarrow Q
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(1a.1) $,
+Q
+, P
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(1b.1) $,
+Q
+, Q
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+Result: F
+208
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  Q \leftrightarrow( P \leftrightarrow Q)
+$
+(0a.1) $,
+Q
+,  \xRightarrow{s}  P \leftrightarrow Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.1a.1) $,
+Q
+, P
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.1b.1) $,
+Q
+, Q
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+Result: F
+209
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  \neg( Q \wedge \neg P)
+$
+(1) $,
+Q \wedge \neg P
+,  \xRightarrow{s}  \quad (by $$ \Rightarrow $$ \neg rule $$)$
+(2) $,
+\neg P
+, Q
+,  \xRightarrow{s}  \quad (by $$ \wedge  $$ \Rightarrow rule$$)$
+(3) $,
+Q
+,  \xRightarrow{s}  P
+\quad (by $$ \neg  $$ \Rightarrow rule$$)$
+Result: F
+210
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  \neg( Q \vee \neg P)
+$
+(1) $,
+Q \vee \neg P
+,  \xRightarrow{s}  \quad (by $$ \Rightarrow $$ \neg rule $$)$
+(1a.1) $,
+Q
+,  \xRightarrow{s}  \quad (by $$ \vee  $$ \Rightarrow rule$$)$
+Result: F
+211
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  \neg( Q \rightarrow \neg P)
+$
+(1) $,
+Q \rightarrow \neg P
+,  \xRightarrow{s}  \quad (by $$ \Rightarrow $$ \neg rule $$)$
+(1a.1) $,
+\neg P
+,  \xRightarrow{s}  \quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+(1a.2) $,
+ \xRightarrow{s}  P
+\quad (by $$ \neg  $$ \Rightarrow rule$$)$
+Result: F
+212
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  \neg( Q \leftrightarrow \neg P)
+$
+(1) $,
+Q \leftrightarrow \neg P
+,  \xRightarrow{s}  \quad (by $$ \Rightarrow $$ \neg rule $$)$
+(1a.1) $,
+Q
+, \neg P
+,  \xRightarrow{s}  \quad (by $$ \leftrightarrow  $$ \Rightarrow rule$$)$
+(1a.2) $,
+Q
+,  \xRightarrow{s}  P
+\quad (by $$ \neg  $$ \Rightarrow rule$$)$
+Result: F
+213
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( Q \wedge P) \wedge P
+$
+(0a.1) $,
+ \xRightarrow{s}  Q \wedge P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(0a.1a.1) $,
+ \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+214
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( Q \wedge P) \vee P
+$
+(1) $,
+ \xRightarrow{s}  P
+, Q \wedge P
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(1a.1) $,
+ \xRightarrow{s}  P
+, Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+215
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( Q \wedge P) \rightarrow P
+$
+(1) $,
+Q \wedge P
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(2) $,
+P
+, Q
+,  \xRightarrow{s}  P
+\quad (by $$ \wedge  $$ \Rightarrow rule$$)$
+Result: T
+216
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( Q \wedge P) \leftrightarrow P
+$
+(0a.1) $,
+Q \wedge P
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.2) $,
+P
+, Q
+,  \xRightarrow{s}  P
+\quad (by $$ \wedge  $$ \Rightarrow rule$$)$
+(0b.1) $,
+P
+,  \xRightarrow{s}  Q \wedge P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0b.1a.1) $,
+P
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+217
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( Q \wedge P) \wedge Q
+$
+(0a.1) $,
+ \xRightarrow{s}  Q \wedge P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(0a.1a.1) $,
+ \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+218
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( Q \wedge P) \vee Q
+$
+(1) $,
+ \xRightarrow{s}  Q
+, Q \wedge P
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(1a.1) $,
+ \xRightarrow{s}  Q
+, Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+219
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( Q \wedge P) \rightarrow Q
+$
+(1) $,
+Q \wedge P
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(2) $,
+P
+, Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \wedge  $$ \Rightarrow rule$$)$
+Result: T
+220
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( Q \wedge P) \leftrightarrow Q
+$
+(0a.1) $,
+Q \wedge P
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.2) $,
+P
+, Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \wedge  $$ \Rightarrow rule$$)$
+(0b.1) $,
+Q
+,  \xRightarrow{s}  Q \wedge P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0b.1a.1) $,
+Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(0b.1b.1) $,
+Q
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+221
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  \neg \neg( Q \wedge P)
+$
+(1) $,
+\neg( Q \wedge P)
+,  \xRightarrow{s}  \quad (by $$ \Rightarrow $$ \neg rule $$)$
+(2) $,
+ \xRightarrow{s}  Q \wedge P
+\quad (by $$ \neg  $$ \Rightarrow rule$$)$
+(2a.1) $,
+ \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+222
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( Q \vee P) \wedge P
+$
+(0a.1) $,
+ \xRightarrow{s}  Q \vee P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(0a.2) $,
+ \xRightarrow{s}  P
+, Q
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+Result: F
+223
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( Q \vee P) \vee P
+$
+(1) $,
+ \xRightarrow{s}  P
+, Q \vee P
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(2) $,
+ \xRightarrow{s}  P
+, P
+, Q
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+Result: F
+224
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( Q \vee P) \rightarrow P
+$
+(1) $,
+Q \vee P
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(1a.1) $,
+Q
+,  \xRightarrow{s}  P
+\quad (by $$ \vee  $$ \Rightarrow rule$$)$
+Result: F
+225
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( Q \vee P) \leftrightarrow P
+$
+(0a.1) $,
+Q \vee P
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.1a.1) $,
+Q
+,  \xRightarrow{s}  P
+\quad (by $$ \vee  $$ \Rightarrow rule$$)$
+Result: F
+226
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( Q \vee P) \wedge Q
+$
+(0a.1) $,
+ \xRightarrow{s}  Q \vee P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(0a.2) $,
+ \xRightarrow{s}  P
+, Q
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+Result: F
+227
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( Q \vee P) \vee Q
+$
+(1) $,
+ \xRightarrow{s}  Q
+, Q \vee P
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(2) $,
+ \xRightarrow{s}  Q
+, P
+, Q
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+Result: F
+228
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( Q \vee P) \rightarrow Q
+$
+(1) $,
+Q \vee P
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(1a.1) $,
+Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \vee  $$ \Rightarrow rule$$)$
+(1b.1) $,
+P
+,  \xRightarrow{s}  Q
+\quad (by $$ \vee  $$ \Rightarrow rule$$)$
+Result: F
+229
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( Q \vee P) \leftrightarrow Q
+$
+(0a.1) $,
+Q \vee P
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.1a.1) $,
+Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \vee  $$ \Rightarrow rule$$)$
+(0a.1b.1) $,
+P
+,  \xRightarrow{s}  Q
+\quad (by $$ \vee  $$ \Rightarrow rule$$)$
+Result: F
+230
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  \neg \neg( Q \vee P)
+$
+(1) $,
+\neg( Q \vee P)
+,  \xRightarrow{s}  \quad (by $$ \Rightarrow $$ \neg rule $$)$
+(2) $,
+ \xRightarrow{s}  Q \vee P
+\quad (by $$ \neg  $$ \Rightarrow rule$$)$
+(3) $,
+ \xRightarrow{s}  P
+, Q
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+Result: F
+231
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( Q \rightarrow P) \wedge P
+$
+(0a.1) $,
+ \xRightarrow{s}  Q \rightarrow P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(0a.2) $,
+Q
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+Result: F
+232
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( Q \rightarrow P) \vee P
+$
+(1) $,
+ \xRightarrow{s}  P
+, Q \rightarrow P
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(2) $,
+Q
+,  \xRightarrow{s}  P
+, P
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+Result: F
+233
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( Q \rightarrow P) \rightarrow P
+$
+(1) $,
+Q \rightarrow P
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(1a.1) $,
+P
+,  \xRightarrow{s}  P
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+(1b.1) $,
+ \xRightarrow{s}  P
+, Q
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+Result: F
+234
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( Q \rightarrow P) \leftrightarrow P
+$
+(0a.1) $,
+Q \rightarrow P
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.1a.1) $,
+P
+,  \xRightarrow{s}  P
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+(0a.1b.1) $,
+ \xRightarrow{s}  P
+, Q
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+Result: F
+235
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( Q \rightarrow P) \wedge Q
+$
+(0a.1) $,
+ \xRightarrow{s}  Q \rightarrow P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(0a.2) $,
+Q
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+Result: F
+236
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( Q \rightarrow P) \vee Q
+$
+(1) $,
+ \xRightarrow{s}  Q
+, Q \rightarrow P
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(2) $,
+Q
+,  \xRightarrow{s}  Q
+, P
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+Result: T
+237
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( Q \rightarrow P) \rightarrow Q
+$
+(1) $,
+Q \rightarrow P
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(1a.1) $,
+P
+,  \xRightarrow{s}  Q
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+Result: F
+238
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( Q \rightarrow P) \leftrightarrow Q
+$
+(0a.1) $,
+Q \rightarrow P
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.1a.1) $,
+P
+,  \xRightarrow{s}  Q
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+Result: F
+239
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  \neg \neg( Q \rightarrow P)
+$
+(1) $,
+\neg( Q \rightarrow P)
+,  \xRightarrow{s}  \quad (by $$ \Rightarrow $$ \neg rule $$)$
+(2) $,
+ \xRightarrow{s}  Q \rightarrow P
+\quad (by $$ \neg  $$ \Rightarrow rule$$)$
+(3) $,
+Q
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+Result: F
+240
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( Q \leftrightarrow P) \wedge P
+$
+(0a.1) $,
+ \xRightarrow{s}  Q \leftrightarrow P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(0a.1a.1) $,
+Q
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+Result: F
+241
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( Q \leftrightarrow P) \vee P
+$
+(1) $,
+ \xRightarrow{s}  P
+, Q \leftrightarrow P
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(1a.1) $,
+Q
+,  \xRightarrow{s}  P
+, P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+Result: F
+242
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( Q \leftrightarrow P) \rightarrow P
+$
+(1) $,
+Q \leftrightarrow P
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(1a.1) $,
+Q
+, P
+,  \xRightarrow{s}  P
+\quad (by $$ \leftrightarrow  $$ \Rightarrow rule$$)$
+(1b.1) $,
+ \xRightarrow{s}  P
+, Q
+, P
+\quad (by $$ \leftrightarrow  $$ \Rightarrow rule$$)$
+Result: F
+243
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( Q \leftrightarrow P) \leftrightarrow P
+$
+(0a.1) $,
+Q \leftrightarrow P
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.1a.1) $,
+Q
+, P
+,  \xRightarrow{s}  P
+\quad (by $$ \leftrightarrow  $$ \Rightarrow rule$$)$
+(0a.1b.1) $,
+ \xRightarrow{s}  P
+, Q
+, P
+\quad (by $$ \leftrightarrow  $$ \Rightarrow rule$$)$
+Result: F
+244
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( Q \leftrightarrow P) \wedge Q
+$
+(0a.1) $,
+ \xRightarrow{s}  Q \leftrightarrow P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(0a.1a.1) $,
+Q
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+Result: F
+245
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( Q \leftrightarrow P) \vee Q
+$
+(1) $,
+ \xRightarrow{s}  Q
+, Q \leftrightarrow P
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(1a.1) $,
+Q
+,  \xRightarrow{s}  Q
+, P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(1b.1) $,
+P
+,  \xRightarrow{s}  Q
+, Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+Result: F
+246
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( Q \leftrightarrow P) \rightarrow Q
+$
+(1) $,
+Q \leftrightarrow P
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(1a.1) $,
+Q
+, P
+,  \xRightarrow{s}  Q
+\quad (by $$ \leftrightarrow  $$ \Rightarrow rule$$)$
+(1b.1) $,
+ \xRightarrow{s}  Q
+, Q
+, P
+\quad (by $$ \leftrightarrow  $$ \Rightarrow rule$$)$
+Result: F
+247
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( Q \leftrightarrow P) \leftrightarrow Q
+$
+(0a.1) $,
+Q \leftrightarrow P
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.1a.1) $,
+Q
+, P
+,  \xRightarrow{s}  Q
+\quad (by $$ \leftrightarrow  $$ \Rightarrow rule$$)$
+(0a.1b.1) $,
+ \xRightarrow{s}  Q
+, Q
+, P
+\quad (by $$ \leftrightarrow  $$ \Rightarrow rule$$)$
+Result: F
+248
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  \neg \neg( Q \leftrightarrow P)
+$
+(1) $,
+\neg( Q \leftrightarrow P)
+,  \xRightarrow{s}  \quad (by $$ \Rightarrow $$ \neg rule $$)$
+(2) $,
+ \xRightarrow{s}  Q \leftrightarrow P
+\quad (by $$ \neg  $$ \Rightarrow rule$$)$
+(2a.1) $,
+Q
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+Result: F
+249
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  Q \wedge( Q \wedge P)
+$
+(0a.1) $,
+ \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+250
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  Q \vee( Q \wedge P)
+$
+(1) $,
+ \xRightarrow{s}  Q \wedge P
+, Q
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(1a.1) $,
+ \xRightarrow{s}  Q
+, Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+251
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  Q \rightarrow( Q \wedge P)
+$
+(1) $,
+Q
+,  \xRightarrow{s}  Q \wedge P
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(1a.1) $,
+Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(1b.1) $,
+Q
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+252
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  Q \leftrightarrow( Q \wedge P)
+$
+(0a.1) $,
+Q
+,  \xRightarrow{s}  Q \wedge P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.1a.1) $,
+Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(0a.1b.1) $,
+Q
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+253
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  Q \wedge( Q \vee P)
+$
+(0a.1) $,
+ \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+254
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  Q \vee( Q \vee P)
+$
+(1) $,
+ \xRightarrow{s}  Q \vee P
+, Q
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(2) $,
+ \xRightarrow{s}  Q
+, P
+, Q
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+Result: F
+255
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  Q \rightarrow( Q \vee P)
+$
+(1) $,
+Q
+,  \xRightarrow{s}  Q \vee P
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(2) $,
+Q
+,  \xRightarrow{s}  P
+, Q
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+Result: T
+256
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  Q \leftrightarrow( Q \vee P)
+$
+(0a.1) $,
+Q
+,  \xRightarrow{s}  Q \vee P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.2) $,
+Q
+,  \xRightarrow{s}  P
+, Q
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(0b.1) $,
+Q \vee P
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0b.1a.1) $,
+Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \vee  $$ \Rightarrow rule$$)$
+(0b.1b.1) $,
+P
+,  \xRightarrow{s}  Q
+\quad (by $$ \vee  $$ \Rightarrow rule$$)$
+Result: F
+257
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  Q \wedge( Q \rightarrow P)
+$
+(0a.1) $,
+ \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+258
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  Q \vee( Q \rightarrow P)
+$
+(1) $,
+ \xRightarrow{s}  Q \rightarrow P
+, Q
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(2) $,
+Q
+,  \xRightarrow{s}  Q
+, P
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+Result: T
+259
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  Q \rightarrow( Q \rightarrow P)
+$
+(1) $,
+Q
+,  \xRightarrow{s}  Q \rightarrow P
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(2) $,
+Q
+, Q
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+Result: F
+260
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  Q \leftrightarrow( Q \rightarrow P)
+$
+(0a.1) $,
+Q
+,  \xRightarrow{s}  Q \rightarrow P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.2) $,
+Q
+, Q
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+Result: F
+261
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  Q \wedge( Q \leftrightarrow P)
+$
+(0a.1) $,
+ \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+262
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  Q \vee( Q \leftrightarrow P)
+$
+(1) $,
+ \xRightarrow{s}  Q \leftrightarrow P
+, Q
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(1a.1) $,
+Q
+,  \xRightarrow{s}  Q
+, P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(1b.1) $,
+P
+,  \xRightarrow{s}  Q
+, Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+Result: F
+263
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  Q \rightarrow( Q \leftrightarrow P)
+$
+(1) $,
+Q
+,  \xRightarrow{s}  Q \leftrightarrow P
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(1a.1) $,
+Q
+, Q
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+Result: F
+264
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  Q \leftrightarrow( Q \leftrightarrow P)
+$
+(0a.1) $,
+Q
+,  \xRightarrow{s}  Q \leftrightarrow P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.1a.1) $,
+Q
+, Q
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+Result: F
+265
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  Q \wedge( Q \wedge Q)
+$
+(0a.1) $,
+ \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+266
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  Q \vee( Q \wedge Q)
+$
+(1) $,
+ \xRightarrow{s}  Q \wedge Q
+, Q
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(1a.1) $,
+ \xRightarrow{s}  Q
+, Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+267
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  Q \rightarrow( Q \wedge Q)
+$
+(1) $,
+Q
+,  \xRightarrow{s}  Q \wedge Q
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(1a.1) $,
+Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(1b.1) $,
+Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: T
+268
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  Q \leftrightarrow( Q \wedge Q)
+$
+(0a.1) $,
+Q
+,  \xRightarrow{s}  Q \wedge Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.1a.1) $,
+Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(0a.1b.1) $,
+Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(0b.1) $,
+Q \wedge Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0b.2) $,
+Q
+, Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \wedge  $$ \Rightarrow rule$$)$
+Result: T
+269
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  Q \wedge( Q \vee Q)
+$
+(0a.1) $,
+ \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+270
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  Q \vee( Q \vee Q)
+$
+(1) $,
+ \xRightarrow{s}  Q \vee Q
+, Q
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(2) $,
+ \xRightarrow{s}  Q
+, Q
+, Q
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+Result: F
+271
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  Q \rightarrow( Q \vee Q)
+$
+(1) $,
+Q
+,  \xRightarrow{s}  Q \vee Q
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(2) $,
+Q
+,  \xRightarrow{s}  Q
+, Q
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+Result: T
+272
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  Q \leftrightarrow( Q \vee Q)
+$
+(0a.1) $,
+Q
+,  \xRightarrow{s}  Q \vee Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.2) $,
+Q
+,  \xRightarrow{s}  Q
+, Q
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(0b.1) $,
+Q \vee Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0b.1a.1) $,
+Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \vee  $$ \Rightarrow rule$$)$
+(0b.1b.1) $,
+Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \vee  $$ \Rightarrow rule$$)$
+Result: T
+273
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  Q \wedge( Q \rightarrow Q)
+$
+(0a.1) $,
+ \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+274
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  Q \vee( Q \rightarrow Q)
+$
+(1) $,
+ \xRightarrow{s}  Q \rightarrow Q
+, Q
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(2) $,
+Q
+,  \xRightarrow{s}  Q
+, Q
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+Result: T
+275
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  Q \rightarrow( Q \rightarrow Q)
+$
+(1) $,
+Q
+,  \xRightarrow{s}  Q \rightarrow Q
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(2) $,
+Q
+, Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+Result: T
+276
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  Q \leftrightarrow( Q \rightarrow Q)
+$
+(0a.1) $,
+Q
+,  \xRightarrow{s}  Q \rightarrow Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.2) $,
+Q
+, Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(0b.1) $,
+Q \rightarrow Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0b.1a.1) $,
+Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+(0b.1b.1) $,
+ \xRightarrow{s}  Q
+, Q
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+Result: F
+277
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  Q \wedge( Q \leftrightarrow Q)
+$
+(0a.1) $,
+ \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+278
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  Q \vee( Q \leftrightarrow Q)
+$
+(1) $,
+ \xRightarrow{s}  Q \leftrightarrow Q
+, Q
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(1a.1) $,
+Q
+,  \xRightarrow{s}  Q
+, Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(1b.1) $,
+Q
+,  \xRightarrow{s}  Q
+, Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+Result: T
+279
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  Q \rightarrow( Q \leftrightarrow Q)
+$
+(1) $,
+Q
+,  \xRightarrow{s}  Q \leftrightarrow Q
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(1a.1) $,
+Q
+, Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(1b.1) $,
+Q
+, Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+Result: T
+280
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  Q \leftrightarrow( Q \leftrightarrow Q)
+$
+(0a.1) $,
+Q
+,  \xRightarrow{s}  Q \leftrightarrow Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.1a.1) $,
+Q
+, Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.1b.1) $,
+Q
+, Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0b.1) $,
+Q \leftrightarrow Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0b.1a.1) $,
+Q
+, Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \leftrightarrow  $$ \Rightarrow rule$$)$
+(0b.1b.1) $,
+ \xRightarrow{s}  Q
+, Q
+, Q
+\quad (by $$ \leftrightarrow  $$ \Rightarrow rule$$)$
+Result: F
+281
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  \neg( Q \wedge \neg Q)
+$
+(1) $,
+Q \wedge \neg Q
+,  \xRightarrow{s}  \quad (by $$ \Rightarrow $$ \neg rule $$)$
+(2) $,
+\neg Q
+, Q
+,  \xRightarrow{s}  \quad (by $$ \wedge  $$ \Rightarrow rule$$)$
+(3) $,
+Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \neg  $$ \Rightarrow rule$$)$
+Result: T
+282
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  \neg( Q \vee \neg Q)
+$
+(1) $,
+Q \vee \neg Q
+,  \xRightarrow{s}  \quad (by $$ \Rightarrow $$ \neg rule $$)$
+(1a.1) $,
+Q
+,  \xRightarrow{s}  \quad (by $$ \vee  $$ \Rightarrow rule$$)$
+Result: F
+283
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  \neg( Q \rightarrow \neg Q)
+$
+(1) $,
+Q \rightarrow \neg Q
+,  \xRightarrow{s}  \quad (by $$ \Rightarrow $$ \neg rule $$)$
+(1a.1) $,
+\neg Q
+,  \xRightarrow{s}  \quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+(1a.2) $,
+ \xRightarrow{s}  Q
+\quad (by $$ \neg  $$ \Rightarrow rule$$)$
+Result: F
+284
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  \neg( Q \leftrightarrow \neg Q)
+$
+(1) $,
+Q \leftrightarrow \neg Q
+,  \xRightarrow{s}  \quad (by $$ \Rightarrow $$ \neg rule $$)$
+(1a.1) $,
+Q
+, \neg Q
+,  \xRightarrow{s}  \quad (by $$ \leftrightarrow  $$ \Rightarrow rule$$)$
+(1a.2) $,
+Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \neg  $$ \Rightarrow rule$$)$
+(1b.1) $,
+ \xRightarrow{s}  Q
+, \neg Q
+\quad (by $$ \leftrightarrow  $$ \Rightarrow rule$$)$
+(1b.2) $,
+Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \neg rule $$)$
+Result: T
+285
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( Q \wedge Q) \wedge P
+$
+(0a.1) $,
+ \xRightarrow{s}  Q \wedge Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(0a.1a.1) $,
+ \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+286
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( Q \wedge Q) \vee P
+$
+(1) $,
+ \xRightarrow{s}  P
+, Q \wedge Q
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(1a.1) $,
+ \xRightarrow{s}  P
+, Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+287
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( Q \wedge Q) \rightarrow P
+$
+(1) $,
+Q \wedge Q
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(2) $,
+Q
+, Q
+,  \xRightarrow{s}  P
+\quad (by $$ \wedge  $$ \Rightarrow rule$$)$
+Result: F
+288
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( Q \wedge Q) \leftrightarrow P
+$
+(0a.1) $,
+Q \wedge Q
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.2) $,
+Q
+, Q
+,  \xRightarrow{s}  P
+\quad (by $$ \wedge  $$ \Rightarrow rule$$)$
+Result: F
+289
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( Q \wedge Q) \wedge Q
+$
+(0a.1) $,
+ \xRightarrow{s}  Q \wedge Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(0a.1a.1) $,
+ \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+290
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( Q \wedge Q) \vee Q
+$
+(1) $,
+ \xRightarrow{s}  Q
+, Q \wedge Q
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(1a.1) $,
+ \xRightarrow{s}  Q
+, Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+291
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( Q \wedge Q) \rightarrow Q
+$
+(1) $,
+Q \wedge Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(2) $,
+Q
+, Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \wedge  $$ \Rightarrow rule$$)$
+Result: T
+292
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( Q \wedge Q) \leftrightarrow Q
+$
+(0a.1) $,
+Q \wedge Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.2) $,
+Q
+, Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \wedge  $$ \Rightarrow rule$$)$
+(0b.1) $,
+Q
+,  \xRightarrow{s}  Q \wedge Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0b.1a.1) $,
+Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(0b.1b.1) $,
+Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: T
+293
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  \neg \neg( Q \wedge Q)
+$
+(1) $,
+\neg( Q \wedge Q)
+,  \xRightarrow{s}  \quad (by $$ \Rightarrow $$ \neg rule $$)$
+(2) $,
+ \xRightarrow{s}  Q \wedge Q
+\quad (by $$ \neg  $$ \Rightarrow rule$$)$
+(2a.1) $,
+ \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+294
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( Q \vee Q) \wedge P
+$
+(0a.1) $,
+ \xRightarrow{s}  Q \vee Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(0a.2) $,
+ \xRightarrow{s}  Q
+, Q
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+Result: F
+295
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( Q \vee Q) \vee P
+$
+(1) $,
+ \xRightarrow{s}  P
+, Q \vee Q
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(2) $,
+ \xRightarrow{s}  P
+, Q
+, Q
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+Result: F
+296
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( Q \vee Q) \rightarrow P
+$
+(1) $,
+Q \vee Q
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(1a.1) $,
+Q
+,  \xRightarrow{s}  P
+\quad (by $$ \vee  $$ \Rightarrow rule$$)$
+Result: F
+297
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( Q \vee Q) \leftrightarrow P
+$
+(0a.1) $,
+Q \vee Q
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.1a.1) $,
+Q
+,  \xRightarrow{s}  P
+\quad (by $$ \vee  $$ \Rightarrow rule$$)$
+Result: F
+298
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( Q \vee Q) \wedge Q
+$
+(0a.1) $,
+ \xRightarrow{s}  Q \vee Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(0a.2) $,
+ \xRightarrow{s}  Q
+, Q
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+Result: F
+299
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( Q \vee Q) \vee Q
+$
+(1) $,
+ \xRightarrow{s}  Q
+, Q \vee Q
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(2) $,
+ \xRightarrow{s}  Q
+, Q
+, Q
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+Result: F
+300
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( Q \vee Q) \rightarrow Q
+$
+(1) $,
+Q \vee Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(1a.1) $,
+Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \vee  $$ \Rightarrow rule$$)$
+(1b.1) $,
+Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \vee  $$ \Rightarrow rule$$)$
+Result: T
+301
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( Q \vee Q) \leftrightarrow Q
+$
+(0a.1) $,
+Q \vee Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.1a.1) $,
+Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \vee  $$ \Rightarrow rule$$)$
+(0a.1b.1) $,
+Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \vee  $$ \Rightarrow rule$$)$
+(0b.1) $,
+Q
+,  \xRightarrow{s}  Q \vee Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0b.2) $,
+Q
+,  \xRightarrow{s}  Q
+, Q
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+Result: T
+302
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  \neg \neg( Q \vee Q)
+$
+(1) $,
+\neg( Q \vee Q)
+,  \xRightarrow{s}  \quad (by $$ \Rightarrow $$ \neg rule $$)$
+(2) $,
+ \xRightarrow{s}  Q \vee Q
+\quad (by $$ \neg  $$ \Rightarrow rule$$)$
+(3) $,
+ \xRightarrow{s}  Q
+, Q
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+Result: F
+303
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( Q \rightarrow Q) \wedge P
+$
+(0a.1) $,
+ \xRightarrow{s}  Q \rightarrow Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(0a.2) $,
+Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(0b.1) $,
+ \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+304
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( Q \rightarrow Q) \vee P
+$
+(1) $,
+ \xRightarrow{s}  P
+, Q \rightarrow Q
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(2) $,
+Q
+,  \xRightarrow{s}  P
+, Q
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+Result: T
+305
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( Q \rightarrow Q) \rightarrow P
+$
+(1) $,
+Q \rightarrow Q
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(1a.1) $,
+Q
+,  \xRightarrow{s}  P
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+Result: F
+306
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( Q \rightarrow Q) \leftrightarrow P
+$
+(0a.1) $,
+Q \rightarrow Q
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.1a.1) $,
+Q
+,  \xRightarrow{s}  P
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+Result: F
+307
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( Q \rightarrow Q) \wedge Q
+$
+(0a.1) $,
+ \xRightarrow{s}  Q \rightarrow Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(0a.2) $,
+Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(0b.1) $,
+ \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+308
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( Q \rightarrow Q) \vee Q
+$
+(1) $,
+ \xRightarrow{s}  Q
+, Q \rightarrow Q
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(2) $,
+Q
+,  \xRightarrow{s}  Q
+, Q
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+Result: T
+309
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( Q \rightarrow Q) \rightarrow Q
+$
+(1) $,
+Q \rightarrow Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(1a.1) $,
+Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+(1b.1) $,
+ \xRightarrow{s}  Q
+, Q
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+Result: F
+310
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( Q \rightarrow Q) \leftrightarrow Q
+$
+(0a.1) $,
+Q \rightarrow Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.1a.1) $,
+Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+(0a.1b.1) $,
+ \xRightarrow{s}  Q
+, Q
+\quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+Result: F
+311
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  \neg \neg( Q \rightarrow Q)
+$
+(1) $,
+\neg( Q \rightarrow Q)
+,  \xRightarrow{s}  \quad (by $$ \Rightarrow $$ \neg rule $$)$
+(2) $,
+ \xRightarrow{s}  Q \rightarrow Q
+\quad (by $$ \neg  $$ \Rightarrow rule$$)$
+(3) $,
+Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+Result: T
+312
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( Q \leftrightarrow Q) \wedge P
+$
+(0a.1) $,
+ \xRightarrow{s}  Q \leftrightarrow Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(0a.1a.1) $,
+Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.1b.1) $,
+Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0b.1) $,
+ \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+313
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( Q \leftrightarrow Q) \vee P
+$
+(1) $,
+ \xRightarrow{s}  P
+, Q \leftrightarrow Q
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(1a.1) $,
+Q
+,  \xRightarrow{s}  P
+, Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(1b.1) $,
+Q
+,  \xRightarrow{s}  P
+, Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+Result: T
+314
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( Q \leftrightarrow Q) \rightarrow P
+$
+(1) $,
+Q \leftrightarrow Q
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(1a.1) $,
+Q
+, Q
+,  \xRightarrow{s}  P
+\quad (by $$ \leftrightarrow  $$ \Rightarrow rule$$)$
+Result: F
+315
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( Q \leftrightarrow Q) \leftrightarrow P
+$
+(0a.1) $,
+Q \leftrightarrow Q
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.1a.1) $,
+Q
+, Q
+,  \xRightarrow{s}  P
+\quad (by $$ \leftrightarrow  $$ \Rightarrow rule$$)$
+Result: F
+316
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( Q \leftrightarrow Q) \wedge Q
+$
+(0a.1) $,
+ \xRightarrow{s}  Q \leftrightarrow Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(0a.1a.1) $,
+Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.1b.1) $,
+Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0b.1) $,
+ \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+Result: F
+317
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( Q \leftrightarrow Q) \vee Q
+$
+(1) $,
+ \xRightarrow{s}  Q
+, Q \leftrightarrow Q
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(1a.1) $,
+Q
+,  \xRightarrow{s}  Q
+, Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(1b.1) $,
+Q
+,  \xRightarrow{s}  Q
+, Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+Result: T
+318
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( Q \leftrightarrow Q) \rightarrow Q
+$
+(1) $,
+Q \leftrightarrow Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(1a.1) $,
+Q
+, Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \leftrightarrow  $$ \Rightarrow rule$$)$
+(1b.1) $,
+ \xRightarrow{s}  Q
+, Q
+, Q
+\quad (by $$ \leftrightarrow  $$ \Rightarrow rule$$)$
+Result: F
+319
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  ( Q \leftrightarrow Q) \leftrightarrow Q
+$
+(0a.1) $,
+Q \leftrightarrow Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.1a.1) $,
+Q
+, Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \leftrightarrow  $$ \Rightarrow rule$$)$
+(0a.1b.1) $,
+ \xRightarrow{s}  Q
+, Q
+, Q
+\quad (by $$ \leftrightarrow  $$ \Rightarrow rule$$)$
+Result: F
+320
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  \neg \neg( Q \leftrightarrow Q)
+$
+(1) $,
+\neg( Q \leftrightarrow Q)
+,  \xRightarrow{s}  \quad (by $$ \Rightarrow $$ \neg rule $$)$
+(2) $,
+ \xRightarrow{s}  Q \leftrightarrow Q
+\quad (by $$ \neg  $$ \Rightarrow rule$$)$
+(2a.1) $,
+Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(2b.1) $,
+Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+Result: T
+321
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  \neg( \neg Q \wedge P)
+$
+(1) $,
+\neg Q \wedge P
+,  \xRightarrow{s}  \quad (by $$ \Rightarrow $$ \neg rule $$)$
+(2) $,
+P
+, \neg Q
+,  \xRightarrow{s}  \quad (by $$ \wedge  $$ \Rightarrow rule$$)$
+(3) $,
+P
+,  \xRightarrow{s}  Q
+\quad (by $$ \neg  $$ \Rightarrow rule$$)$
+Result: F
+322
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  \neg( \neg Q \vee P)
+$
+(1) $,
+\neg Q \vee P
+,  \xRightarrow{s}  \quad (by $$ \Rightarrow $$ \neg rule $$)$
+(1a.1) $,
+\neg Q
+,  \xRightarrow{s}  \quad (by $$ \vee  $$ \Rightarrow rule$$)$
+(1a.2) $,
+ \xRightarrow{s}  Q
+\quad (by $$ \neg  $$ \Rightarrow rule$$)$
+Result: F
+323
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  \neg( \neg Q \rightarrow P)
+$
+(1) $,
+\neg Q \rightarrow P
+,  \xRightarrow{s}  \quad (by $$ \Rightarrow $$ \neg rule $$)$
+(1a.1) $,
+P
+,  \xRightarrow{s}  \quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+Result: F
+324
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  \neg( \neg Q \leftrightarrow P)
+$
+(1) $,
+\neg Q \leftrightarrow P
+,  \xRightarrow{s}  \quad (by $$ \Rightarrow $$ \neg rule $$)$
+(1a.1) $,
+\neg Q
+, P
+,  \xRightarrow{s}  \quad (by $$ \leftrightarrow  $$ \Rightarrow rule$$)$
+(1a.2) $,
+P
+,  \xRightarrow{s}  Q
+\quad (by $$ \neg  $$ \Rightarrow rule$$)$
+Result: F
+325
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  \neg( \neg Q \wedge Q)
+$
+(1) $,
+\neg Q \wedge Q
+,  \xRightarrow{s}  \quad (by $$ \Rightarrow $$ \neg rule $$)$
+(2) $,
+Q
+, \neg Q
+,  \xRightarrow{s}  \quad (by $$ \wedge  $$ \Rightarrow rule$$)$
+(3) $,
+Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \neg  $$ \Rightarrow rule$$)$
+Result: T
+326
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  \neg( \neg Q \vee Q)
+$
+(1) $,
+\neg Q \vee Q
+,  \xRightarrow{s}  \quad (by $$ \Rightarrow $$ \neg rule $$)$
+(1a.1) $,
+\neg Q
+,  \xRightarrow{s}  \quad (by $$ \vee  $$ \Rightarrow rule$$)$
+(1a.2) $,
+ \xRightarrow{s}  Q
+\quad (by $$ \neg  $$ \Rightarrow rule$$)$
+Result: F
+327
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  \neg( \neg Q \rightarrow Q)
+$
+(1) $,
+\neg Q \rightarrow Q
+,  \xRightarrow{s}  \quad (by $$ \Rightarrow $$ \neg rule $$)$
+(1a.1) $,
+Q
+,  \xRightarrow{s}  \quad (by $$ \rightarrow  $$ \Rightarrow rule$$)$
+Result: F
+328
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  \neg( \neg Q \leftrightarrow Q)
+$
+(1) $,
+\neg Q \leftrightarrow Q
+,  \xRightarrow{s}  \quad (by $$ \Rightarrow $$ \neg rule $$)$
+(1a.1) $,
+\neg Q
+, Q
+,  \xRightarrow{s}  \quad (by $$ \leftrightarrow  $$ \Rightarrow rule$$)$
+(1a.2) $,
+Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \neg  $$ \Rightarrow rule$$)$
+(1b.1) $,
+ \xRightarrow{s}  \neg Q
+, Q
+\quad (by $$ \leftrightarrow  $$ \Rightarrow rule$$)$
+(1b.2) $,
+Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \neg rule $$)$
+Result: T
+329
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  \neg \neg Q \wedge P
+$
+(0a.1) $,
+ \xRightarrow{s}  \neg \neg Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(0a.2) $,
+\neg Q
+,  \xRightarrow{s}  \quad (by $$ \Rightarrow $$ \neg rule $$)$
+(0a.3) $,
+ \xRightarrow{s}  Q
+\quad (by $$ \neg  $$ \Rightarrow rule$$)$
+Result: F
+330
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  \neg \neg Q \vee P
+$
+(1) $,
+ \xRightarrow{s}  P
+, \neg \neg Q
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(2) $,
+\neg Q
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \neg rule $$)$
+(3) $,
+ \xRightarrow{s}  P
+, Q
+\quad (by $$ \neg  $$ \Rightarrow rule$$)$
+Result: F
+331
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  \neg \neg Q \rightarrow P
+$
+(1) $,
+\neg \neg Q
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(2) $,
+ \xRightarrow{s}  P
+, \neg Q
+\quad (by $$ \neg  $$ \Rightarrow rule$$)$
+(3) $,
+Q
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \neg rule $$)$
+Result: F
+332
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  \neg \neg Q \leftrightarrow P
+$
+(0a.1) $,
+\neg \neg Q
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.2) $,
+ \xRightarrow{s}  P
+, \neg Q
+\quad (by $$ \neg  $$ \Rightarrow rule$$)$
+(0a.3) $,
+Q
+,  \xRightarrow{s}  P
+\quad (by $$ \Rightarrow $$ \neg rule $$)$
+Result: F
+333
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  \neg \neg Q \wedge Q
+$
+(0a.1) $,
+ \xRightarrow{s}  \neg \neg Q
+\quad (by $$ \Rightarrow $$ \wedge rule $$)$
+(0a.2) $,
+\neg Q
+,  \xRightarrow{s}  \quad (by $$ \Rightarrow $$ \neg rule $$)$
+(0a.3) $,
+ \xRightarrow{s}  Q
+\quad (by $$ \neg  $$ \Rightarrow rule$$)$
+Result: F
+334
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  \neg \neg Q \vee Q
+$
+(1) $,
+ \xRightarrow{s}  Q
+, \neg \neg Q
+\quad (by $$ \Rightarrow $$ \vee rule $$)$
+(2) $,
+\neg Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \neg rule $$)$
+(3) $,
+ \xRightarrow{s}  Q
+, Q
+\quad (by $$ \neg  $$ \Rightarrow rule$$)$
+Result: F
+335
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  \neg \neg Q \rightarrow Q
+$
+(1) $,
+\neg \neg Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \rightarrow rule $$)$
+(2) $,
+ \xRightarrow{s}  Q
+, \neg Q
+\quad (by $$ \neg  $$ \Rightarrow rule$$)$
+(3) $,
+Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \neg rule $$)$
+Result: T
+336
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  \neg \neg Q \leftrightarrow Q
+$
+(0a.1) $,
+\neg \neg Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0a.2) $,
+ \xRightarrow{s}  Q
+, \neg Q
+\quad (by $$ \neg  $$ \Rightarrow rule$$)$
+(0a.3) $,
+Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \Rightarrow $$ \neg rule $$)$
+(0b.1) $,
+Q
+,  \xRightarrow{s}  \neg \neg Q
+\quad (by $$ \Rightarrow $$ \leftrightarrow rule $$)$
+(0b.2) $,
+Q
+, \neg Q
+,  \xRightarrow{s}  \quad (by $$ \Rightarrow $$ \neg rule $$)$
+(0b.3) $,
+Q
+,  \xRightarrow{s}  Q
+\quad (by $$ \neg  $$ \Rightarrow rule$$)$
+Result: T
+337
+ Begin inference!
+(0) $,
+ \xRightarrow{s}  \neg \neg \neg \neg Q
+$
+(1) $,
+\neg \neg \neg Q
+,  \xRightarrow{s}  \quad (by $$ \Rightarrow $$ \neg rule $$)$
+(2) $,
+ \xRightarrow{s}  \neg \neg Q
+\quad (by $$ \neg  $$ \Rightarrow rule$$)$
+(3) $,
+\neg Q
+,  \xRightarrow{s}  \quad (by $$ \Rightarrow $$ \neg rule $$)$
+(4) $,
+ \xRightarrow{s}  Q
+\quad (by $$ \neg  $$ \Rightarrow rule$$)$
+Result: F
+
+进程已结束,退出代码0
